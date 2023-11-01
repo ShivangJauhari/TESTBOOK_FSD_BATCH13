@@ -1,0 +1,19 @@
+/* css for all the div tag */
+div{
+    background: rgb(0, 0, 128);
+    color: orangered;
+}
+/* css for the class 10% opacity */
+.tenpercent{
+    background: rgba(0 , 0, 128, .1);
+}
+/* css for the class 30% opacity */
+.thirtypercent{
+    background-color: navy;
+    background: rgba(0 , 0, 128, .3);
+}
+/* css for the class 60% opacity */
+.sixtypercent{
+    background-color: navy;
+    background: rgba(0 , 0, 128, .6);
+}

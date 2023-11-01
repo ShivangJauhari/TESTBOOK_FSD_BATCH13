@@ -1,0 +1,14 @@
+/* css for h1 tag  */
+h1{
+    background-color: purple;
+    color: white;
+}
+/* css for the div tag */
+div{
+    background-color: aquamarine;
+}
+/* css fot the .para class */
+.para{
+    background-color: red;
+    color: wheat;
+}
