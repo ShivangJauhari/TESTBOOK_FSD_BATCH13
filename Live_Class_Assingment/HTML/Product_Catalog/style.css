@@ -1,0 +1,31 @@
+/* global attributes */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+/* h1 tag */
+.heading{
+    background-color: aliceblue;
+    font-size: 36px;
+    font-weight: 300;
+    text-align: center;
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 20px 40px 20px 40px;
+    border: 2px solid royalblue;
+   
+}
+img{
+    width: 300px;
+    height: 300px;
+}
+ul{
+    list-style-type: none;
+}
