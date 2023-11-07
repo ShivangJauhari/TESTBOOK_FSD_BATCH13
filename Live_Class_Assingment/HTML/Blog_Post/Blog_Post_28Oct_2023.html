@@ -9,46 +9,82 @@
       href="/Images/download (2).jpg"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="/Live_Class_Assingment/HTML/Blog_Post/styles.css">
-    <style>
-      .post{
-             text-align: center; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"
-      }
-      p{
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href="/Live_Class_Assingment/HTML/Blog_Post/style.css"
+    />
   </head>
   <!-- Constructing a Blog Layout:
 Task: You're launching a blog and need a layout. Develop an HTML structure for a blog, including a home page, article pages, and a sidebar for recent posts, categories, and a search bar.
  -->
   <body>
-    <div class="main">
-      <section class="post" style=>
-        <h1 title="Post Title">Post title</h1>
-        <h3 title="Name of the Author">Author's Name</h3>
-        <h5 title="Date of publish">Date: dd/mm/yyyy</h5>
-        <img src="/Images/download (1).jpg" alt="Post Image Space" title="Space">
-      </section>
-      <section>
-        <p>
-          <b>Lorem</b> ipsum dolor sit amet consectetur, adipisicing elit. Nam dicta
-          magni quibusdam quam iure expedita, placeat pariatur reprehenderit,
-          culpa id exercitationem provident natus quaerat suscipit libero odit,
-          quidem consequatur reiciendis.
-        </p>
-        <p >
-          <p><b>Lorem</b> ipsum dolor sit amet consectetur adipisicing elit. Earum dignissimos eligendi sunt, minima explicabo dicta corporis. Temporibus suscipit voluptas provident saepe dolorum sed aspernatur, dicta repellat necessitatibus, aliquam voluptatibus! Numquam.</p>
-          <p><b>Vitae</b> consequuntur molestiae assumenda ratione voluptatem voluptas veritatis fugit maxime dignissimos, placeat dolore soluta ipsam beatae accusamus necessitatibus, pariatur qui dolorum ab id? Ea pariatur est dolores voluptates consectetur neque.</p>
-          <p><b>Vel i</b>llo consectetur quisquam dicta eaque perspiciatis. Culpa quasi molestias, aperiam nulla obcaecati in, commodi, corporis aspernatur hic laboriosam iste aut accusamus impedit ipsam magnam veritatis nostrum? Vero, quam nam.</p>
-          <p><b>Expli</b>cabo laudantium tenetur assumenda, beatae quae vero. Quos, illo? Perspiciatis rerum quia, distinctio iste iure voluptas laboriosam sapiente ad magnam quae ipsam earum a facilis recusandae ullam odit aut dicta?</p>
-          <p><b>Id au</b>tem quam similique. Quod repellat, error dolore optio minima voluptatem assumenda repellendus aperiam sunt nihil enim ad eligendi autem, nulla soluta ea animi accusantium laudantium, asperiores natus? Deserunt, nesciunt!</p>
-          <p><b>Iste,</b> ullam. Magnam tempore pariatur natus nihil adipisci, harum assumenda veritatis. Doloremque perspiciatis laborum excepturi sit in ipsa corporis, deleniti ex facere, fuga fugiat, minus cupiditate beatae at cum nobis.</p>
-          <p><b>Perfe</b>rendis omnis tenetur molestias pariatur beatae illo, provident fuga magnam corporis dignissimos. Ipsa praesentium modi deserunt earum eos culpa minima soluta iusto vitae. Repellendus incidunt culpa animi, nihil asperiores distinctio?</p>
-        </p>
+    <header class="blog-head">
+      <h1>Blog Name</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <p>Search area</p>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <header class="article-head">
+          <h2>Article Heading</h2>
+          <p>
+            Published on January 1, 2023 - Categories:
+            <a href="#">Category 1</a>, <a href="#">Category 2</a>
+          </p>
+        </header>
+        <div class="img-container">
+          <img src="/Images/space post.jpg" alt="Space Image" />
+        </div>
+        <div class="article-content">
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia nulla
+            doloribus inventore quibusdam perspiciatis sit saepe, facilis officiis
+            omnis ullam. Similique ipsam delectus unde at sunt dicta vero. Tempore
+            similique nemo numquam sint totam beatae atque dignissimos at
+            accusantium. Tempore quibusdam odit debitis cumque neque labore, optio
+            exercitationem libero tenetur placeat, iste minus sunt ipsam ex sit
+            adipisci fugiat accusamus possimus nemo saepe commodi quod? Quidem
+            veritatis magni, rem ipsum cum iure sit mollitia accusamus esse, quo
+            harum quisquam minus nam quaerat repudiandae modi maxime, animi
+            eveniet neque corrupti! Nostrum quidem dignissimos voluptatem vitae
+            consequuntur quae dolorum repellat. Consequuntur molestiae sapiente
+            animi! Cum molestiae corrupti fugit suscipit quasi corporis, tempore
+            reiciendis, est autem ipsa, doloribus nisi consectetur nemo ipsam eos
+            itaque ad dolores! Beatae ad neque architecto incidunt quos? Amet
+            mollitia saepe, debitis incidunt ipsa quis cum corporis veniam
+            perspiciatis dolorum repellendus reiciendis eos laudantium quod! Quam
+            voluptas fugit unde aliquam reiciendis perferendis reprehenderit
+            ratione, ex amet dicta, culpa animi. Sapiente eaque laboriosam
+            delectus suscipit ratione pariatur enim est nostrum, animi et.
+            Reprehenderit placeat voluptate accusamus, iure est, consequatur vel
+            laborum hic aliquid earum distinctio fugit repellendus, esse mollitia
+            ipsa ducimus. Eligendi obcaecati molestiae molestias eius delectus sit
+            natus quisquam.
+          </p>
+          <!-- more content -->
+        </div>
+        
+      </article>
+    </main>
 
+    <aside>
+      <section class="recent-post">
+        <h3>Recent Posts</h3>
+        <ul>
+          <li><a href="#">Recent Post 1</a></li>
+          <li><a href="#">Recent Post 2</a></li>
+          <li><a href="#">Recent Post 3</a></li>
+        </ul>
       </section>
-    </div>
+    </aside>
+    <footer>
+      <p>&copy; 2023 My Blog | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+  </footer>
   </body>
 </html>
