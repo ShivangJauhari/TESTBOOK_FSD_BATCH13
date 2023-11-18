@@ -1,0 +1,15 @@
+/* div + p {
+    background-color: gold;
+} */
+
+/* div ~ p {
+    background-color: violet;
+} */
+
+div > p  {
+    background-color: violet;
+}
+
+/* div p{
+    background-color: gold;
+} */
