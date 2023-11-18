@@ -1,0 +1,60 @@
+
+/* P1 Key frames backgrond color variation form original to original */
+/* div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: cssani;
+    animation-duration: 4s;
+    animation-delay: 2s;
+} */
+
+
+
+/* @keyframes cssani{
+    from {background-color: red;}
+    to {background-color: blue;}
+} */
+
+/* P2 keyframes box changes color and moves with the help of top left properties  */
+/* P3 keyframes box changes color and moves with the help of top left properties and time delay */
+
+/* @keyframes cssani{
+    0% {background-color: red; left: 0px; top: 0px;}
+    25% {background-color: yellow; left: 200px; top: 0px;}
+    50% {background-color: blue; left: 200px; top: 200px;}
+    75% {background-color: green; left: 0px; top: 200px;}
+    100% {background-color: red; left: 0px; top: 0px;}
+} */
+
+/* P4 Speed curve animation */
+
+div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation: speed 10s infinite;
+}
+ 
+@keyframes speed{
+    form {left: 0px;}
+    to {left:400px;}
+}
+
+#id1{
+    animation-timing-function: linear;
+}
+#id2{
+    animation-timing-function: ease;
+}
+#id3{
+    animation-timing-function: ease-in;
+}
+#id4{
+    animation-timing-function: ease-out;
+}
+#id5{
+    animation-timing-function: ease-in-out;
+}
