@@ -1,0 +1,80 @@
+
+/* P1 Verticle Nav Bar */
+/* .verticalnav{
+    width: 150px;
+    height: 100vh;
+    background-color: azure;
+}
+.verticalnav a{
+    background-color: rgb(165, 221, 193);
+    color: rgb(5, 26, 26);
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+.verticalnav a:hover{
+    background-color: rgba(149, 149, 226, 0.6);
+}
+.verticalnav a.active{
+    background-color: blueviolet;
+    color: rgb(252, 247, 247);
+} */
+
+/* P2 Horizontal Nav */
+
+/* .horizontalnav {
+    background-color: #000;
+    overflow: hidden;
+}
+
+.horizontalnav a{
+    border-bottom: 5px solid transparent;
+    float: left;
+    display: block;
+    color: white;
+    padding: 20px;
+    font-size: 30px;
+    text-decoration: none;
+    direction: rtl;
+}
+
+.horizontalnav a:hover{
+    border-bottom: 5px solid rgb(223, 147, 92);
+}
+
+.horizontalnav a.active{
+    background-color: rgba(202, 89, 89,0.6);
+} */
+
+
+/* P3 Fixed Nav */
+
+.fixednav{
+    height: 100%;
+    width: 120px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #234;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+.fixednav a{
+    padding: 10px;
+    text-decoration: none;
+    font-size: 25;
+    color: antiquewhite;
+    display: block;
+}
+
+.fixednav a:hover{
+    background-color: rgba(57, 78, 99,0.6);
+}
+
+@media screen and (max-height: 450px) {
+    .fixednav{padding-top: 15px;}
+    .fixednav a {font-size: 18px}
+    
+}
