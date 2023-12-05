@@ -1,0 +1,220 @@
+/* ----------------------------------------Glpbally Applied------------------------------------------------------- */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #293f50;
+    color: #888;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---------------------------------------------------------Links----------------------------------------------------- */
+a {
+    color: #648880;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #a9b2b9;
+}
+
+p a {
+    border-bottom: 1px solid #dfe2e5;
+}
+
+header a,
+footer a {
+    color: #fff;
+}
+
+header a:hover,
+footer a:hover {
+    color: #648880;
+}
+
+/* --------------------------------------------------------List, Headings-------------------------------------------- */
+
+ul li{
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #648880;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 44px;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 44px;
+}
+
+h3 {
+    font-size: 21px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+h5 {
+    color: #84919b;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+/* -------------------------------------------- Grid container ------------------------------------------------------- */
+.grid{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+}
+
+/* --------------------------------------------------------Button----------------------------------------------------- */
+
+.button {
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 400;
+    letter-spacing: .5px;
+    margin: 20px;
+    text-transform: uppercase;
+}
+
+.button-border {
+    border: 1px solid #fff;
+    padding: 10px 30px;
+}
+
+.button-border:hover {
+    background: #fff;
+    color: #648880;
+}
+
+
+
+/* --------------------------------------------Header Section--------------------------------------------------------- */
+
+header{
+    align-items: center;
+    margin-top: 60px;
+   
+}
+
+header h1{
+    grid-column: span 6;
+    text-align: left;
+    margin-left: 50%;
+}
+
+header div{
+    grid-column: span 6;
+    display: flex;
+    flex-direction: column;
+}
+
+header h3{
+    
+    text-align: right;
+    margin-right: 50%;
+}
+
+/* -----------------------------------------------------Nav section----------------------------------------- */
+header div nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    flex-direction: row;
+    margin-right: 50%;
+    
+}
+
+header div nav ul li{
+    margin: 10px;
+}
+
+/* --------------------------------------------------------Nav Section ------------------------------------------ */
+
+header section{
+    grid-column: 4/ span 7;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+/* ----------------------------------------------------Main section -----------------------------------------------------*/
+
+
+main{
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+}
+
+main div {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-evenly;
+}
+.item-1{
+    grid-column: 3/span 2;
+}
+
+.item-2{
+    grid-column: 6/span 2;
+}
+
+.item-3{
+    grid-column: 9/span 2;
+}
+
+
+main div img{
+    width: 250px;
+    height: 250px;
+    border-radius: 30px;
+ 
+}
+
+/* -----------------------------------------footer section ----------------------------------------------------- */
+
+footer small{
+    grid-column: span 6;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer nav{
+    grid-column: span 6;
+  
+}
+
+footer nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    flex-direction: row;
+    margin-right: 50%;
+    
+}
+
+footer nav ul li{
+    margin: 10px;
+}

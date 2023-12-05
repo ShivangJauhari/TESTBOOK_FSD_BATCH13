@@ -1,0 +1,104 @@
+/* --------------------------------------globally applied----------------------------------------------------- */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* --------------------------------------body applied----------------------------------------------------- */
+body{
+    background-image: url(/PROJECTS/HTML_CSS/Survey_form/images/body_background.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(10px);
+    height: 160vh;
+    background-attachment: fixed;    
+    color: white;
+    font-weight: 400;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* --------------------------------------headng,label, button,input etc tag applied---------------------------------- */
+h1{
+    margin-top: 60px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+h1, h3{
+    align-self: center;
+
+}
+
+
+
+button{
+    border: none;
+    background-color: blueviolet;
+    color: aliceblue;
+
+}
+
+button:hover{
+    color: rgb(188, 130, 243);
+    background-color: rgb(64, 14, 110);
+    cursor: pointer;
+}
+
+textarea{
+    resize: vertical;
+}
+
+.input-form  select, textarea, button, label{
+    margin: 2px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+
+
+.input-form label span{
+    font-size: medium;
+}
+
+/* --------------------------------------------------- classes applied background and form----------------------------- */
+
+.layer {
+    background-color: rgba(102, 99, 13, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.container{
+    display: flex;    
+    flex-direction: column;
+    
+}
+
+.input-form{
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+    background-color: rgba(44, 43, 1, 0.7);
+    width: 60%;
+   
+}
+
+.input-checkbox-radio input{
+    display: inline-block;
+    margin: 2px;
+    padding: 5px;
+    font-size: 20px;
+    
+}
+
+.input-checkbox-radio p {    
+    width: 15px;
+    display: inline;  
+    margin: 2px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+

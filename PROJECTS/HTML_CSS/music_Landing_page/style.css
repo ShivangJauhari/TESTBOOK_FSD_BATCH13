@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #252529;
+    color: #fff;
+    line-height: 1.6;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+img{
+    border-radius: 40px;
+}
+h1, h3, p{
+    margin: 20px;
+    text-align: center;
+    padding: 10px;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1{
+    font-size: 2.5em;
+}
+
+h3{
+    font-size: 2em;
+}
+
+p{
+    font-size: 1.1em;
+}
+
+/* ````````````````````````````````````````````````````Header Section``````````````````````````````````````````````` */
+header{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    background-color: rgba(0,0,0,0.5);
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    
+}
+
+header nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header nav a{
+    margin: 10px 10px;
+    padding: 10px;
+    text-decoration: none;
+    color: antiquewhite;
+    font-size: 1.2em;
+    font-weight: 400;
+    transition: all 0.4s ease;
+}
+
+header nav a:hover{
+    font-size: 1.5em;
+    background-color: rgba(250, 250, 250, 0.3);
+    box-shadow: inset white ;
+    text-transform: uppercase;
+}
+
+/* ````````````````````````````````````````````````````Header Section``````````````````````````````````````````````` */
+/* ```````````````````````````````````````````````````````Main Section~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.first_bg{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url(/PROJECTS/HTML_CSS/music_Landing_page/images/first_background.jpg);
+    position: relative;
+    margin: 60px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: bisque;
+}
+
+
+
+.music{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.music .material-symbols-outlined{
+    font-size: 40px;
+}
+
+
+
+.music .content{
+    font-size: 1.5;
+}
+
+.movie{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    color: #252529;
+}
+
+.entertainment{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(/PROJECTS/HTML_CSS/music_Landing_page/images/entertainment_bg.webp);    
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 600px;
+}
+
+.gift-card{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+    gap: 70px;    
+    background-color: white;    
+    height: 400px;
+    color: #252529;
+}
+
+.gift-card img{
+    transform: rotate(-45deg);
+    transform:skew(25deg);
+    margin-left: 70px;
+}
+.gift-card a{
+    margin: 10px;
+    display: flex;
+}
+
+.gift-card .material-symbols-outlined{
+    display: inline-block;
+    font-size: 25px;
+}
+
+
+
+
+.button{
+    padding: 1rem;
+    color: #fff;
+    display: inline-block;
+    background-color: red;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin: 20px;
+}
+
+.button:hover{
+   background-color: #d3071b;
+}
+
+.button2{
+    padding: 1rem;
+    color: #fff;
+    display: inline-block;
+    background-color: #103063;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin: 20px;
+}
+
+.button2:hover{
+   background-color: #143f85;
+}
+
+/* ````````````````````````````````````````````````````Footer```````````````````````````````````````````````````````` */
+
+footer{
+    color: #fff;
+}
+footer a{
+    color: antiquewhite;
+}
+
+footer .footer-cols {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 2rem;
+    text-align: left;
+    font-size: 14px;
+}
+
+footer .footer-cols ul {
+    list-style: none;
+}
+
+footer .footer-cols ul li:first-child {
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: #444 solid 1px;
+    margin-bottom: 1rem;
+}
+
+footer .footer-bottom {
+    background: #333;
+    padding: 1rem;
+    text-align: center;
+}
+
+
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+}
+
