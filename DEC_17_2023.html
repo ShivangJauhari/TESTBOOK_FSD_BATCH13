@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEC_17_2023</title>
+    <style>
+        /* //P4  mouseout Event Scenario:
+        
+        // Scenario: You have a navigation menu with several list items, and you want to highlight a list item by changing its background color when a user hovers over it. Additionally, you want to revert the background color to its original state when the user moves the mouse away. How can you achieve this effect using the mouseover and mouseout events? Include both HTML and JavaScript code to demonstrate.*/
+        /* CSS to style the navigation menu */
+      /*  ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        li {
+          padding: 10px;
+          cursor: pointer;
+        }
+        */
+        /*------------------------------------------------------------------------------------*/
+
+         /* CSS to style the main div */
+        #mainDiv {
+        padding: 20px;
+        background-color: lightblue;
+      }
+      </style>
+</head>
+<body>
+
+        <!-- P1 statement -->
+    <!-- <form action="#">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="enter your name">
+        <label for="user id">User Id:</label>
+        <input type="text" id="user_id"  placeholder="enter your userid">
+        <label for="email">email:</label>
+        <input type="email" id="email" placeholder="enter your email">
+        <label for="designatin">Designamtion:</label>
+        <input type="text" id="designation" placeholder="enter your designation">
+        <input type="button" value="submit">
+    </form> -->
+<!------------------------------------------------------------------------------------------------- -->
+
+    <!-- P2 Scenario: You have a simple HTML button, and you want to display an alert message when a user clicks on it. Provide a code example of how you would use the onclick event to achieve this functionality. -->
+
+    <!--  button -->
+    <!-- <button onclick="displayAlert()">Click me!</button> -->
+<!-- -------------------------------------------------------------------------------------------------- -->
+    <!-- //P3  mouseover Event Scenario:
+        
+        // Scenario: You have an image of a cat on your website, and you want to change the image source to a playful one when a user hovers their mouse pointer over it. Explain how you can implement this behavior using the mouseover event in JavaScript, and provide a code example. -->
+
+        <!-- image -->
+        <!-- <img id="catImage" src="https://images.unsplash.com/photo-1548546738-8509cb246ed3?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cat Image" onmouseover="changeImage()" onmouseout="restoreImage()" height="300px" width="300px"> -->
+<!-- ----------------------------------------------------------------------------------------------- -->
+        <!-- //P4 mouseout Event Scenario:
+        
+        // Scenario: You have a navigation menu with several list items, and you want to highlight a list item by changing its background color when a user hovers over it. Additionally, you want to revert the background color to its original state when the user moves the mouse away. How can you achieve this effect using the mouseover and mouseout events? Include both HTML and JavaScript code to demonstrate. -->
+            <!--  navigation menu -->
+    <!-- <ul id="menu">
+             <li onmouseover="highlightItem(this)" onmouseout="resetItem(this)">Menu Item 1</li>
+            <li onmouseover="highlightItem(this)" onmouseout="resetItem(this)">Menu Item 2</li>
+            <li onmouseover="highlightItem(this)" onmouseout="resetItem(this)">Menu Item 3</li>
+   
+  </ul> -->
+<!-- -------------------------------------------------------------------------------------------- -->
+  <!-- // P5 Combined Event Scenario:
+        
+  // Scenario: You want to create a button that not only changes its background color when a user clicks on it but also displays a custom message when the user hovers over it. How would you combine the onclick and mouseover events to achieve this functionality? Provide both HTML and JavaScript code for this scenario. -->
+
+  <!-- <button id="myButton" onclick="changeColor()" onmouseover="displayMessage()" onmouseout="displayNone()">Click me!</button>
+    <div id="message"></div> // Problem only one time execution -->
+<!-- ------------------------------------------------------------------------------------------ -->
+
+    <!-- //P6 Event Delegation Scenario:
+        
+        // Scenario: You have an unordered list (<ul>) with dynamically generated list items (<li>) using JavaScript. You want to handle click events on any of the list items efficiently, even when new items are added dynamically. Explain how you can use event delegation to achieve this and provide a code example. -->
+        
+    
+        <!-- unordered list -->
+        <!-- <ul id="myList">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul> -->
+<!-- -------------------------------------------------------------------------------------------------- -->
+
+// mouseenter and mouseleave Event Scenario:
+        
+        // Scenario: You have a complex HTML element with nested divs and paragraphs, and you want to change the background color of the main div when a user's mouse enters it and revert it to the original color when the user's mouse leaves. Describe how you can use the mouseenter and mouseleave events to handle this scenario, and include code to illustrate your solution.
+
+        <!--  structure with nested divs and paragraphs -->
+        <div id="mainDiv">
+            <div>
+            <p>Some nested content here.</p>
+            <div>
+                <p>More nested content.</p>
+            </div>
+            </div>
+        </div>
+    <script>
+        
+//---------------------------------------------------------------------------------------------------------
+        //P1 Script
+        // Class for details of the form 
+    /*    class details  {
+            name="name";
+             user_id='12345';
+             email='xyz@gmail.com';
+             designation='manager';
+         }
+
+        // Object of the class details
+         user1 = new details();
+
+        // Storing the input value in the user1 object variables
+         user1.name = document.getElementById("name").value;
+         user1.user_id = document.getElementById("user_id").value;
+         user1.email = document.getElementById("email").value;
+         user1.designation = document.getElementById("designation").value;
+        
+        // Displaying the details class object user1 variables values in the console 
+         console.log(user1);   */
+//--------------------------------------------------------------------------------------------------
+        // P2
+        // Scenario: You have a simple HTML button, and you want to display an alert message when a user clicks on it. Provide a code example of how you would use the onclick event to achieve this functionality.
+
+          // JavaScript function to display the alert
+          /*       function displayAlert() {
+                    alert('Button clicked!');
+                 }  */
+//----------------------------------------------------------------------------------------------------
+          //P3
+          // mouseover Event Scenario:
+        
+        // Scenario: You have an image of a cat on your website, and you want to change the image source to a playful one when a user hovers their mouse pointer over it. Explain how you can implement this behavior using the mouseover event in JavaScript, and provide a code example.  
+        
+     /*     // JavaScript function to change the image source on mouseover
+            function changeImage() {
+                document.getElementById('catImage').src = 'https://images.unsplash.com/photo-1511044568932-338cba0ad803?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+            }
+
+            // JavaScript function to restore the original image source on mouseout
+            function restoreImage() {
+               document.getElementById('catImage').src = 'https://images.unsplash.com/photo-1548546738-8509cb246ed3?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+    }  */
+//--------------------------------------------------------------------------------------------------------
+ /*   //P4  mouseout Event Scenario:
+        
+        // Scenario: You have a navigation menu with several list items, and you want to highlight a list item by changing its background color when a user hovers over it. Additionally, you want to revert the background color to its original state when the user moves the mouse away. How can you achieve this effect using the mouseover and mouseout events? Include both HTML and JavaScript code to demonstrate.
+
+        JavaScript functions to highlight and reset list items
+      function highlightItem(item) {
+        item.style.backgroundColor = 'aqua';
+       }
+
+        function resetItem(item) {
+           item.style.backgroundColor = ''; // Revert to the default background color
+     }  */ 
+
+//----------------------------------------------------------------------------------------------------
+  /*     // P5 Combined Event Scenario:
+        
+        // Scenario: You want to create a button that not only changes its background color when a user clicks on it but also displays a custom message when the user hovers over it. How would you combine the onclick and mouseover events to achieve this functionality? Provide both HTML and JavaScript code for this scenario.
+
+          JavaScript function to change the button color on click
+            function changeColor() {
+               document.getElementById('message').style.backgroundColor = 'lightblue';
+           }
+
+            JavaScript function to display a message on button hover
+            function displayMessage() {
+               document.getElementById("message").innerHTML= ('Hovering over the button.');
+           }
+             JavaScript function to display a none on not hover
+           function displayNone()
+           {
+                document.getElementById("message").style.display = 'none';
+      }  */
+
+  //------------------------------------------------------------------------------------------       
+    /* // P6 // Event Delegation Scenario:
+        
+        // Scenario: You have an unordered list (<ul>) with dynamically generated list items (<li>) using JavaScript. You want to handle click events on any of the list items efficiently, even when new items are added dynamically. Explain how you can use event delegation to achieve this and provide a code example.
+
+        // Event delegation: Attaching a single click event listener to the <ul> parent element
+        document.getElementById("myList").addEventListener("click", function(event) {
+            // Check if the clicked element is an <li> within the <ul>
+            if (event.target && event.target.nodeName === "LI") {
+            // Perform actions based on the clicked <li>
+            console.log("Clicked on:", event.target.textContent); // Example action: Log the text content of the clicked <li>
+            // You can add other actions or logic here based on the clicked <li>
+            }
+        });
+
+        // Example of dynamically adding a new <li> to the list
+        setTimeout(function() {
+            var newItem = document.createElement("li");
+            newItem.textContent = "New Item";
+            document.getElementById("myList").appendChild(newItem);
+        }, 2000); // Add a new <li> after 2 seconds (as an example)
+        
+      */  
+//----------------------------------------------------------------------------------------------------
+
+      // P7 // mouseenter and mouseleave Event Scenario:
+        
+        // Scenario: You have a complex HTML element with nested divs and paragraphs, and you want to change the background color of the main div when a user's mouse enters it and revert it to the original color when the user's mouse leaves. Describe how you can use the mouseenter and mouseleave events to handle this scenario, and include code to illustrate your solution.
+  // Get the reference to the main div
+  const mainDiv = document.getElementById('mainDiv');
+
+  // Add event listeners for mouse enter and mouse leave
+  mainDiv.addEventListener('mouseenter', function() {
+    // Change background color when mouse enters
+    mainDiv.style.backgroundColor = 'lightgreen';
+  });
+
+  mainDiv.addEventListener('mouseleave', function() {
+    // Revert to the original background color when mouse leaves
+    mainDiv.style.backgroundColor = 'lightblue'});
+    
+    </script>
+</body>
+</html>

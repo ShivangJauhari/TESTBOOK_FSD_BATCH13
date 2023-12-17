@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linkedin</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/LinkedIn-logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <!---------------------------------------------------- Header and navbar ---------------------------------------->
+    <header>
+        <nav class="navbar">
+            <div class="navbar_left">
+                <a href="index.html" class="logo"><img src="images/LinkedIn-logo1.png" alt="logo"></a>
+
+                <div class="search-box">
+                    <span class="material-symbols-outlined">
+                        search
+                        </span>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+            <div class="navbar-center">
+                <ul>
+                    <li><a href="#" class="active-link"><span class="material-symbols-outlined">
+                        home
+                        </span> <span>Home</span></a></li>
+                    <li><a href="#"><span class="material-symbols-outlined">
+                        groups
+                        </span> <span>My Network</span></a></li>
+                    <li><a href="#"><span class="material-symbols-outlined">
+                        work
+                        </span><span>Jobs</span></a></li>
+                    <li><a href="#"><span class="material-symbols-outlined">
+                        chat
+                        </span> <span>Messaging</span></a></li>
+                    <li><a href="#"><span class="material-symbols-outlined">
+                        notifications
+                        </span> <span>Notification</span></a></li>
+                    
+                </ul>
+            </div>
+            <div class="navbar-right" style="border-left: 2px solid #ccc;">
+                <div class="navbar-right-center">
+                    <ul>
+                    <li><a href="#"><span class="material-symbols-outlined">
+                        apps
+                        </span><span>For Business</span></a></li>
+                    <li><a href="#" style="text-decoration: underline;">Try Premium</a></li>
+                    </ul>  
+                </div>
+                <div class="online">
+                    <img src="images/7A.jpg" alt="user image" class="nav-profile-img"  onclick="toggleMenu()">
+                </div>                
+            </div>
+            <!-- ----------------------------------------profile drop down-------------------------------------- -->
+            <div class="profile-menu-wrap" id="profileMenu">
+                <div class="profile-menu">
+                    <div class="user-info">
+                        <img src="images/7A.jpg" alt="uer_img" >
+                        <div>
+                            <h3>Shivang Jauhari</h3>
+                            <a href="profile.html">See your profile</a>
+                        </div>
+                    </div>
+                    <hr>
+                    <a href="#" class="profile-menu-link">
+                        <span class="material-symbols-outlined">
+                            <span class="material-symbols-outlined">
+                                feedback
+                                </span>
+                            </span>
+                        <p>Give feedback</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="profile-menu-link">
+                        <span class="material-symbols-outlined">
+                            <span class="material-symbols-outlined">
+                                Settings
+                                </span>
+                            </span>
+                        <p>Settings and Privacy</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="profile-menu-link">
+                        <span class="material-symbols-outlined">
+                            <span class="material-symbols-outlined">
+                                Help
+                                </span>
+                            </span>
+                        <p>Help & Support</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="profile-menu-link">
+                        <span class="material-symbols-outlined">
+                            <span class="material-symbols-outlined">
+                                Accessibility
+                                </span>
+                            </span>
+                        <p>Display & Accessibility</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="profile-menu-link">
+                        <span class="material-symbols-outlined">
+                            <span class="material-symbols-outlined">
+                                logout
+                                </span>
+                            </span>
+                        <p>Logout</p>
+                        <span>></span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!------------------------------------------- header section and navbar ended ------------------------------------->
+
+    <div class="container">
+        <div class="profile-main">
+            <div class="profile-container">
+                <img src="images/1A.jpg" alt="cover-pic" width="100%">
+                <div class="profile-container-inner">
+                    <img src="images/7A.jpg" alt="user-img" class="profile-pic">
+                    <h1>Shivang Jauhari</h1>
+                    <b>web Developer | former Data analyst</b>
+                    <p>India &middot; <a href="#">Contact Info</a></p>
+                    <div class="mutual-connection">
+                        <img src="images/user-2.png" alt="mutual-friend">
+                        <span>Mutual connection</span>
+                    </div>
+                    <div class="profile-btn">
+                        <a href="#"class="primary-btn">
+                            <span class="material-symbols-outlined"  style="float: right;">
+                                <span class="material-symbols-outlined">
+                                    connect_without_contact
+                                    </span>
+                                </span>Connect
+                        </a>
+                        <a href="#">
+                            <span class="material-symbols-outlined" style="float: right;">
+                                <span class="material-symbols-outlined">
+                                    Message
+                                    </span>
+                                </span>Message
+                        </a>
+                    </div>
+                </div>
+
+                <div class="profile-description">
+                    <h2>About</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis dolorem voluptatem minima. Voluptates unde non accusantium nihil iusto, vel saepe voluptate dolorem illo iste hic obcaecati necessitatibus, quidem amet debitis.</p>
+                    <a href="#" class="see-more-link">See more...</a>
+                </div>
+
+                <div class="profile-description">
+                    <h2>Experience</h2>
+                    <div class="profile-desc-row">
+                        <img src="images/microsoft.png" alt="microsoft">
+                        <div>
+                            <h3>LEad fornt end dev</h3>
+                            <b>Lorem ipsum dolor, sit amet c</b>
+                            <b>Lorem ipsum dolor, sit amet c</b>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet accusamus ullam facere. Quasi magnam, reprehenderit accusamus tempora veniam adipisci provident quod cupiditate dignissimos dolor sit quas, at reiciendis sequi ut!</p>
+                            <hr>
+
+                        </div>
+                    </div>
+                    <div class="profile-desc-row">
+                        <img src="images/software.png" alt="microsoft">
+                        <div>
+                            <h3>LEad fornt end dev</h3>
+                            <b>Lorem ipsum dolor, sit amet c</b>
+                            <b>Lorem ipsum dolor, sit amet c</b>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet accusamus ullam facere. Quasi magnam, reprehenderit accusamus tempora veniam adipisci provident quod cupiditate dignissimos dolor sit quas, at reiciendis sequi ut!</p>
+                            <hr>
+                            
+                        </div>
+                    </div>
+                    <div class="profile-desc-row">
+                        <img src="images/microsoft.png" alt="microsoft">
+                        <div>
+                            <h3>LEad fornt end dev</h3>
+                            <b>Lorem ipsum dolor, sit amet c</b>
+                            <b>Lorem ipsum dolor, sit amet c</b>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet accusamus ullam facere. Quasi magnam, reprehenderit accusamus tempora veniam adipisci provident quod cupiditate dignissimos dolor sit quas, at reiciendis sequi ut!</p>
+                        
+                            
+                        </div>
+                    </div>
+                    <hr>
+                    <a href="#" class="experience-link">Show All<span class="material-symbols-outlined" class="post-activity-arrow-icon">
+                        expand_more
+                        </span></a>
+
+                </div>
+
+                <div class="profile-description">
+                    <h2>Education</h2>
+                    <div class="profile-desc-row">
+                        <img src="images/hotel.png" alt="">
+                        <div>
+                            <h3>School</h3>
+                            <b>Lorem ipsum dolor sit amet.</b>
+                            <b>Lorem ipsum dolor sit amet.</b>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="profile-desc-row">
+                        <img src="images/hotel.png" alt="">
+                        <div>
+                            <h3>College</h3>
+                            <b>Lorem ipsum dolor sit amet.</b>
+                            <b>Lorem ipsum dolor sit amet.</b>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="profile-desc-row">
+                        <img src="images/hotel.png" alt="">
+                        <div>
+                            <h3>School</h3>
+                            <b>Lorem ipsum dolor sit amet.</b>
+                            <b>Lorem ipsum dolor sit amet.</b>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="prfile-description">
+                    <h2>Skills</h2>
+                    <a href="#" class="skills-btn">Lorem, ipsum.</a>
+                    <a href="#" class="skills-btn">Lorem, ipsum.</a>
+                    <a href="#" class="skills-btn">Lorem, ipsum.</a>
+                    <a href="#" class="skills-btn">Lorem, ipsum.</a>
+                    <a href="#" class="skills-btn">Lorem, ipsum.</a>
+                    <a href="#" class="skills-btn">Lorem, ipsum.</a>
+                    <a href="#" class="skills-btn">Lorem, ipsum.</a>
+                    <a href="#" class="skills-btn">Lorem, ipsum.</a>
+                    <a href="#" class="skills-btn">Lorem, ipsum.</a>
+                </div>
+                <div class="prfile-description">
+                    <h2>Languages</h2>
+                    <a href="#" class="language-btn">Lorem, ipsum.</a>
+                    <a href="#" class="language-btn">Lorem, ipsum.</a>
+                    <a href="#" class="language-btn">Lorem, ipsum.</a>
+                    <a href="#" class="language-btn">Lorem, ipsum.</a>
+                    <a href="#" class="language-btn">Lorem, ipsum.</a>
+                    <a href="#" class="language-btn">Lorem, ipsum.</a>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- --------------------------profile sidebar-------------------------------- -->
+        <div class="profile-sidebar">
+            <div class="sidebar-ad">
+                <small>Ad &middot; &middot; &middot; </small>
+                <p>Master the 5 principles of web design</p>
+                <div>
+                    <img src="images/user-2.png" alt="user-1">
+                    <img src="images/software.png" alt="software">
+                </div>
+                  <b>Brand and Demand in software</b>
+                  <a href="#" class="ad-link">Learn More</a>
+            </div>
+            <div class="sidebar-people">
+                <h3>people you may know</h3>
+                <div class="sidebar-people-row">
+                    <img src="images/user-2.png" alt="uer">
+                    <div>
+                        <h2>Tony</h2>
+                        <p>Lorem, ipsum dolor.</p>
+                        <a href="#">Connect</a>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-people">
+                
+                <div class="sidebar-people-row">
+                    <img src="images/user-2.png" alt="uer">
+                    <div>
+                        <h2>Tony</h2>
+                        <p>Lorem, ipsum dolor.</p>
+                        <a href="#">Connect</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="profile-footer">
+        <div class="sidebar-useful-links">
+            <a href="#">About</a>
+            <a href="#">Accessibility</a>
+            <a href="#">Help Center</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Advertising</a>
+            <a href="#">Get the App</a>
+            <a href="#">More</a>
+
+
+            <div class="copyright-msg">
+                <img src="images/LinkedIn-logo.png" alt="linkedin_in_logo" width="90px" height="30">
+                <p>Linkedin &#169; 2023. All right reserved</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let profileMenu = document.getElementById("profileMenu");
+
+        function toggleMenu(){
+            profileMenu.classList.toggle("open-menu");
+        }
+    </script>
+
+</body>
+</html>

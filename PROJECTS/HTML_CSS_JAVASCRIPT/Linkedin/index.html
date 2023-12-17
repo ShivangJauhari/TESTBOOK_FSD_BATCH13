@@ -27,19 +27,19 @@
                 <ul>
                     <li><a href="#" class="active-link"><span class="material-symbols-outlined">
                         home
-                        </span> <span>Home</span></a></li>
+                        </span> <p>Home</p></a></li>
                     <li><a href="#"><span class="material-symbols-outlined">
                         groups
-                        </span> <span>My Network</span></a></li>
+                        </span> <p>My Network</p></a></li>
                     <li><a href="#"><span class="material-symbols-outlined">
                         work
-                        </span><span>Jobs</span></a></li>
+                        </span><p>Jobs</p></a></li>
                     <li><a href="#"><span class="material-symbols-outlined">
                         chat
-                        </span> <span>Messaging</span></a></li>
+                        </span> <p>Messaging</p></a></li>
                     <li><a href="#"><span class="material-symbols-outlined">
                         notifications
-                        </span> <span>Notification</span></a></li>
+                        </span> <p>Notification</p></a></li>
                     
                 </ul>
             </div>
@@ -53,17 +53,17 @@
                     </ul>  
                 </div>
                 <div class="online">
-                    <img src="images/7A.jpg" alt="user image" class="nav-profile-img" >
+                    <img src="images/7A.jpg" alt="user image" class="nav-profile-img"  onclick="toggleMenu()">
                 </div>                
             </div>
             <!-- ----------------------------------------profile drop down-------------------------------------- -->
-            <div class="profile-menu-wrap">
+            <div class="profile-menu-wrap" id="profileMenu">
                 <div class="profile-menu">
                     <div class="user-info">
-                        <img src="images/7A.jpg" alt="" sizes="" srcset="">
+                        <img src="images/7A.jpg" alt="uer_img" >
                         <div>
                             <h3>Shivang Jauhari</h3>
-                            <a href="#">See your profile</a>
+                            <a href="profile.html">See your profile</a>
                         </div>
                     </div>
                     <hr>
@@ -74,6 +74,42 @@
                                 </span>
                             </span>
                         <p>Give feedback</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="profile-menu-link">
+                        <span class="material-symbols-outlined">
+                            <span class="material-symbols-outlined">
+                                Settings
+                                </span>
+                            </span>
+                        <p>Settings and Privacy</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="profile-menu-link">
+                        <span class="material-symbols-outlined">
+                            <span class="material-symbols-outlined">
+                                Help
+                                </span>
+                            </span>
+                        <p>Help & Support</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="profile-menu-link">
+                        <span class="material-symbols-outlined">
+                            <span class="material-symbols-outlined">
+                                Accessibility
+                                </span>
+                            </span>
+                        <p>Display & Accessibility</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="profile-menu-link">
+                        <span class="material-symbols-outlined">
+                            <span class="material-symbols-outlined">
+                                logout
+                                </span>
+                            </span>
+                        <p>Logout</p>
                         <span>></span>
                     </a>
                 </div>
@@ -108,7 +144,7 @@
                 </div>
             </div>
             <!--------------------------------------------- sidebar-activity---------------------------------->
-            <div class="sidebar-activity">
+            <div class="sidebar-activity" id="sidebar-activity">
                 <h3>Recent</h3>
                 <a href="#"><span class="material-symbols-outlined">
                     schedule
@@ -155,6 +191,7 @@
                     <a href="#">Discover More</a>
                 </div>
             </div>
+            <p id="showmorelink" onclick="toggleActivity()">Show more <b>+</b></p>
         </div>
         <!-------------------------------------------- left sidebar ended ------------------------------------------>
 
@@ -240,23 +277,23 @@
                                         <div post-activity-link>
                                             <span class="material-symbols-outlined">
                                                 thumb_up
-                                                </span> Like
+                                                </span> <p>Lke</p>
                                         </div>
                                         <div post-activity-link>
                                             <span class="material-symbols-outlined">
                                                     comment
-                                                    </span> Comment
+                                                    </span> <p>Comment</p>
 
                                         </div>
                                         <div>
                                             <span class="material-symbols-outlined">
                                                         share
-                                                        </span> Share
+                                                        </span> <p>Share</p>
                                         </div>           
                                         <div>     
                                             <span class="material-symbols-outlined">
                                                             send
-                                                            </span> Send            
+                                                            </span> <p>Send</p>           
                                         </div>
 
 
@@ -454,6 +491,27 @@
         <!------------------------------------------------ right sidebar ended ------------------------------------->
     </div>
 
+    <script>
+        let profileMenu = document.getElementById("profileMenu");
 
+        function toggleMenu(){
+            profileMenu.classList.toggle("open-menu");
+        }
+
+        let sidebarActivity = document.getElementById("sidebar-activity");
+        let showmorelink= document.getElementById("showmorelink");
+        function toggleActivity(){
+            sidebarActivity.classList.toggle("open-activity");
+
+            if(sidebarActivity.classList.contains("open-activity")){
+                showmorelink.innerHTML = "Show less <b>-<b>";
+            }
+            else{
+                showmorelink.innerHTML = "Show more <b>+<b>";
+            }
+        }
+        
+    </script>
+    
 </body>
 </html>

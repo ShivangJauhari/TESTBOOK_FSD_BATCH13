@@ -6,7 +6,7 @@
 }
 /* --------------------------------------body applied----------------------------------------------------- */
 body{
-    background-image: url(/PROJECTS/HTML_CSS/Survey_form/images/body_background.png);
+    background-image: url(images/body_background.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     backdrop-filter: blur(10px);
