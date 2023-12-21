@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hot tea cup</title>
+    <style>
+        body{
+            background-color: teal;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .tea-cup{
+            width: 200px;
+            height: 250px;
+            background-color: white;
+            display: inline-block;
+            margin-top: 300px;
+            border-top-right-radius: 30px;
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 80px;
+            border-bottom-right-radius: 80px;
+        }
+        .cup-handle{
+            position: relative;
+            display: inline-block;
+            width: 150px;
+            height: 200px;
+            margin-bottom: 25px;
+            margin-top: 300px;
+            background-color: white;
+            border-top-right-radius: 300px;
+            border-top-left-radius: 200px;
+            border-bottom-left-radius: 200px;
+            border-bottom-right-radius: 300px;
+        }
+        .offset-cup-handle{
+            position: relative;
+            width: 100px;
+            height: 150px;
+            background-color: teal;
+            margin-top: 25px;
+            margin-left: 25px;
+            border-top-right-radius: 300px;
+            border-top-left-radius: 200px;
+            border-bottom-left-radius: 200px;
+            border-bottom-right-radius: 300px;
+
+        }
+        .circle-1{
+            position: relative;
+            width: 50px;
+            height: 50px;
+            margin-top: 40px;
+            margin-left: 20px;
+            border-radius: 50%;
+            background-color: white;
+            animation: moveup 4s ease-out infinite;
+            
+        }
+        .circle-2{
+            position: relative;
+            width: 50px;
+            height: 50px;
+            margin-top: -20px;
+            margin-left: 30px;
+            border-radius: 50%;
+            background-color: white;
+            animation: moveup 5s ease-in-out infinite;
+        }
+        .circle-3{
+            position: relative;
+            width: 50px;
+            height: 50px;
+            margin-top: -10px;
+            margin-left: 50px;
+            border-radius: 50%;
+            background-color: white;
+            animation: moveup 3s ease infinite;
+        }
+        .circle-4{
+            position: relative;
+            width: 50px;
+            height: 50px;
+            margin-top: -40px;
+            margin-left: 60px;
+            border-radius: 50%;
+            background-color: white;
+            animation: moveup 4s ease-in infinite;
+        }
+        @keyframes moveup{
+            0% {
+                bottom: 0;
+                opacity: 1;
+                
+              }
+            50%{
+                opacity: 0.5;
+                
+            }
+            100% {
+                bottom: calc(100% - 50px); 
+                opacity: 0;
+              }
+            
+        }
+   
+        
+    </style>
+</head>
+<body>
+    
+    <div class="circle"></div>
+    
+        <div class="tea-cup">
+            <div class="circle-1"></div>
+            <div class="circle-2"></div>
+            <div class="circle-3"></div>
+            <div class="circle-4"></div>
+        </div>
+            <div class="cup-handle">
+                <div class="offset-cup-handle">
+            </div>
+        
+         </div>
+</body>
+</html>

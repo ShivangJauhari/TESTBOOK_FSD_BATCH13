@@ -1,0 +1,8 @@
+body{
+    background-color: lightgray;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: ;
+}

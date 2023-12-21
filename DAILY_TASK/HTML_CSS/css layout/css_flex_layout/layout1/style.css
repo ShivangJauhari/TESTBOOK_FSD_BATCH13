@@ -9,12 +9,22 @@ body{
 }
 header{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: lightcoral;
     height: 9vh;
     margin: 1vh 0;
 }
+
+header div{
+    display: block;
+}
+
+header div a{
+    margin: 20px;
+}
+
 main{
     display: flex;
     align-items: center;
@@ -32,6 +42,24 @@ main aside{
     background-color: lightcyan;
     height: inherit;
 }
+main aside section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main aside>div{
+    overflow-y: scroll;
+    
+}
+
+main aside>div>div {
+    display: flex;
+    margin: 10px;
+    
+}
+    
 main article{
     flex-basis: 74%;
     display: flex;
@@ -59,10 +87,16 @@ main article p{
     padding: 10px;
 }
 
+main article div div img{
+    width: inherit;
+    height: inherit;    
+}
+
 
 
 footer{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 1vh 0;
