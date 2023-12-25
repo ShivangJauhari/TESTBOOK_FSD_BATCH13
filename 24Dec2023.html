@@ -5,50 +5,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         
-            body div{
+      /*      body div{
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
+                padding: 20px;
             }
-            body div
-        
+            body div h1{
+                display: block;
+            }
+            body div div{
+                display: inline-block;
+                margin: 10px;
+                padding: 10px;
+            }
+        */
+        div{
+           
+            text-align: center;
+            margin: 20px;
+        }
     </style>
     <title>Quiz</title>
 </head>
 <body>
-    <div>
-    <h1 id="question-1">What is the capital of France?</h1>
-    <div>
-        <button type="submit" id="option" onclick="getoption()">berlin</button>
-        <button type="submit" id="option" onclick="getoption()">delhi</button>
-        <button type="submit" id="option" onclick="getoption()">Tokyo</button>
-        <button type="submit" id="option" onclick="getoption()">paris</button>
-    </div>
-    <div></div>
-    <button type="submit" id="next">Next</button>
-    <button type="submit" id="back">Back</button>
-    <p id="display-result"></p>
-    <p id="score"></p>
-</div>
+    <div class="container" id="question-1" value="1" style="display: block;">
+        <h1 id="question-1">What is the capital of France?</h1>
+        <div>
+            <button type="submit" id="option-1" onclick="getresult(this)">berlin</button>
+            <button type="submit" id="option-2" onclick="getresult(this)">delhi</button>
+            <button type="submit" id="option-3" onclick="getresult(this)">Tokyo</button>
+            <button type="submit" id="option-4" onclick="getresult(this)" data-correct="true">paris</button>
+        </div>
+        <div>
+            <button type="submit" id="next" onclick="navigation(this)">Next</button>
+            <button type="submit" id="back" onclick="navigation(this)">Back</button>
+        </div>
+        <div>
+            <p id="display-result"></p>
+            <p id="score"></p>
+        </div>      
+    </div> 
+    <div class="container" id="question-2" value="2" style="display: none;">
+        <h1 id="question-1">What is the capital of France?</h1>
+        <div>
+            <button type="submit" id="option-1" onclick="getresult(this)">berlin</button>
+            <button type="submit" id="option-2" onclick="getresult(this)">delhi</button>
+            <button type="submit" id="option-3" onclick="getresult(this)">Tokyo</button>
+            <button type="submit" id="option-4" onclick="getresult(this)" data-correct="true">paris</button>
+        </div>
+        <div>
+            <button type="submit" id="next" onclick="navigation(this)">Next</button>
+            <button type="submit" id="back" onclick="navigation(this)">Back</button>
+        </div>
+        <div>
+            <p id="display-result"></p>
+            <p id="score"></p>
+        </div>      
+    </div> 
+    <div class="container" id="question-3" value="3" style="display: none;">
+        <h1 id="question-1">What is the capital of France?</h1>
+        <div>
+            <button type="submit" id="option-1" onclick="getresult(this)">berlin</button>
+            <button type="submit" id="option-2" onclick="getresult(this)">delhi</button>
+            <button type="submit" id="option-3" onclick="getresult(this)">Tokyo</button>
+            <button type="submit" id="option-4" onclick="getresult(this)" data-correct="true">paris</button>
+        </div>
+        <div>
+            <button type="submit" id="next" onclick="navigation(this)">Next</button>
+            <button type="submit" id="back" onclick="navigation(this)">Back</button>
+        </div>
+        <div>
+            <p id="display-result"></p>
+            <p id="score"></p>
+        </div>      
+    </div> 
+    <div class="container" id="question-4" value="4" style="display: none;">
+        <h1 id="question-1">What is the capital of France?</h1>
+        <div>
+            <button type="submit" id="option-1" onclick="getresult(this)">berlin</button>
+            <button type="submit" id="option-2" onclick="getresult(this)">delhi</button>
+            <button type="submit" id="option-3" onclick="getresult(this)">Tokyo</button>
+            <button type="submit" id="option-4" onclick="getresult(this)" data-correct="true">paris</button>
+        </div>
+        <div>
+            <button type="submit" id="next" onclick="navigation(this)">Next</button>
+            <button type="submit" id="back" onclick="navigation(this)">Back</button>
+        </div>
+        <div>
+            <p id="display-result"></p>
+            <p id="score"></p>
+        </div>      
+    </div> 
 <script>
+
     count = 0;
-    function getoption(){
-        let option = document.getElementById("option").value;
+     document.getElementById('back').disabled = true;
+         function getresult(option){
+           
+            if(option.getAttribute('data-correct'))
+            {
+            document.getElementById("display-result").innerHTML ="correct answer";
+                count += 1; 
+            
+                document.getElementById("score").innerHTML = count;
+                option.style.backgroundColor= 'green';
+            }
+            else{
+                document.getElementById("display-result").innerHTML = "Wrong answer";
+                    
+                document.getElementById("score").innerHTML = count;
+                option.style.backgroundColor= 'red';
+            }
+
+        document.getElementById('option-1').disabled = true;
+        document.getElementById('option-2').disabled = true;
+        document.getElementById('option-3').disabled = true;
+        document.getElementById('option-4').disabled = true;
+    };
+    
+/*
+    function navigation(question){
         
-        if(option == 'Berlin' || option == 'Delhi' || option == 'Tokyo')
+        switch(question.getAttribute('value'))
         {
-            displayresult =  document.getElementById("display-result").innerHTML = "Wrong answer";
-            score =  document.getElementById("display-result").innerHTML = count;
-            document.getElementById("").style.color('red');
+            
+            case 1:
+                document.getElementById('back').disabled = true;
+                document.getElementById('question-2').style.display = 'none';
+                document.getElementById('question-3').style.display = 'none';
+                document.getElementById('question-4').style.display = 'none';      
+                       
+            break;
+            case 2:
+                
+                document.getElementById('question-2').style.display = 'none';
+                document.getElementById('question-3').style.display = 'none';
+                document.getElementById('question-4').style.display = 'none';
+            break;
+            case 3:
+                document.getElementById('question-2').style.display = 'none';
+                document.getElementById('question-1').style.display = 'none';
+                document.getElementById('question-4').style.display = 'none';
+            break;
+            case 4:
+                document.getElementById('question-1').style.display = 'none';
+                document.getElementById('question-2').style.display = 'none';
+                document.getElementById('question-3').style.display = 'none';
+                document.getElementById('next').disabled = true;
+            break;
+            default:
+                document.getElementById('back').disabled = true;
+                document.getElementById('question-2').style.display = 'none';
+                document.getElementById('question-3').style.display = 'none';
+                document.getElementById('question-4').style.display = 'none';
+            break;*/
+
         }
-        else{
-            displayresult =  document.getElementById("display-result").innerHTML = "Wrong answer";
-            count += 1; 
-            score =  document.getElementById("display-result").innerHTML = count;
-            document.getElementById("").style.color('red');
+    
+       /* if(question.getAttribute('value') == 1){
+            document.getElementById('back').disabled = true;
+            document.getElementById('question-2').style.display = 'none';
+            document.getElementById('question-3').style.display = 'none';
+            document.getElementById('question-4').style.display = 'none';
+            
         }
-    }
+        if(question.getAttribute('value') == 2){
+            document.getElementById('value').disabled = true;
+            document.getElementById('question-1').style.display = 'none';
+            document.getElementById('question-3').style.display = 'none';
+            document.getElementById('question-4').style.display = 'none';
+        }
+        if(question.getAttribute('value') == 3){
+            document.getElementById('question-2').style.display = 'none';
+            document.getElementById('question-1').style.display = 'none';
+            document.getElementById('question-4').style.display = 'none';
+        }
+        if(question.getAttribute('value') == 4){
+            document.getElementById('question-1').style.display = 'none';
+            document.getElementById('question-2').style.display = 'none';
+            document.getElementById('question-3').style.display = 'none';
+            document.getElementById('value').disabled = true;
+        }*/
+
+    } 
 
 </script>
 </body>

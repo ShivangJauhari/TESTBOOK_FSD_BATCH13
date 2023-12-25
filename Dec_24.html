@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dec 24 Task</title>
+    <!-- <style>
+        /* 1 Scenario: Dynamic Content Display
+
+    Objective: Create a webpage with a button. On clicking the button, dynamically display a message on the webpage using JavaScript.
+    Requirements:
+    HTML: Button element.
+    CSS: Style the button and message display.
+    JavaScript: Function to handle button click and update the DOM
+    button{
+       border: none;
+       background-color: turquoise;
+    } */
+    </style> -->
+    
+    <!-- <style>
+        /* P2 Scenario: Form Validation
+
+    Objective: Build a form with input fields for name and email. Validate the form using JavaScript. Display an error message if the fields are empty on form submission.
+    Requirements:
+    HTML: Form with input fields and a submit button.
+    CSS: Style the form and error message.
+    JavaScript: Function to validate form fields and display an error message.*/
+    body{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    label{
+        display: block;
+        text-decoration: underline;
+        margin: 5px;
+        padding: 5px;
+    }
+    input{
+        text-align: center;
+        display: block;
+        padding: 10px;
+        border: 1px solid grey;
+        border-radius: 5px;
+        color: black;
+    }
+    button{
+        display: block;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid grey;
+        border-radius: 5px;
+        color: black;
+    }
+    </style> -->
+    <!-- ----------------------------------------------------- P3---------------------------------------------------------------- -->
+    <style>
+     /*   P3  Scenario: Image Gallery with Modal
+      Objective: Create an image gallery with thumbnails. On clicking a thumbnail, open a modal with the full-size image using JavaScript.
+            Requirements:
+            HTML: Image gallery with thumbnails and a modal.
+            CSS: Style the gallery and modal.
+            JavaScript: Functions to handle thumbnail click, display modal, and close modal. */
+            
+    </style>
+</head>
+<body>
+        <!--  P1 Scenario: Dynamic Content Display
+
+        Objective: Create a webpage with a button. On clicking the button, dynamically display a message on the webpage using JavaScript.
+        Requirements:
+        HTML: Button element.
+        CSS: Style the button and message display.
+        JavaScript: Function to handle button click and update the DOM. 
+        <h1>Dynamic Content Display</h1>
+        <button type="button" id="btn">Click here</button>
+        <script>
+            const element = document.getElementById("btn");
+            element.addEventListener("click", display);
+        
+            function display()
+            {
+                const para = document.createElement("p");
+                para.innerHTML = "Hello there pargraph is created through javascript"
+                document.body.appendChild(para);
+            } 
+           
+            
+    </script> -->
+<!-- -------------------------------------------P1---------------------------------------------------- -->
+    <!-- P2 Scenario: Form Validation
+
+    Objective: Build a form with input fields for name and email. Validate the form using JavaScript. Display an error message if the fields are empty on form submission.
+    Requirements:
+    HTML: Form with input fields and a submit button.
+    CSS: Style the form and error message.
+    JavaScript: Function to validate form fields and display an error message. -->
+
+    <!-- <form action="#">
+        <label for="name" >Name:</label>
+        <input type="text" id="name"  >
+        <label for="email" >Email:</label>
+        <input type="email" id="email"  >
+        <button type="submit" id="submit">Submit</button>
+    </form>
+    <script>
+        var submit = document.getElementById("submit");
+            submit.addEventListener("click", checkError);
+        
+        function checkError(){
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            if(name.trim() === '' || email.trim() === '')
+            {
+                alert("Please fill the requrired feild");
+            }
+            else
+            {
+                para1 =document.createElement("p")
+                para1.innerText = `Your name is ${name}`;
+                para2 =document.createElement("p")
+                para2.innerText = `Your email is ${email}`;
+                document.body.appendChild(para1);
+                document.body.appendChild(para2);
+            }
+        }
+    </script> -->
+<!-- ----------------------------------------~----------P2---------------------------------------------------- -->
+
+<!-- P3  Scenario: Image Gallery with Modal
+      Objective: Create an image gallery with thumbnails. On clicking a thumbnail, open a modal with the full-size image using JavaScript.
+Requirements:
+HTML: Image gallery with thumbnails and a modal.
+CSS: Style the gallery and modal.
+JavaScript: Functions to handle thumbnail click, display modal, and close modal. -->
+
+    <div class=".container">
+        <img src="/Images/cheetah abstract.jpg" alt="img1">
+        <img src="/Images/cheetah abstract.jpg" alt="img1">
+        <img src="/Images/cheetah abstract.jpg" alt="img1">
+        <img src="/Images/cheetah abstract.jpg" alt="img1">
+        <img src="/Images/cheetah abstract.jpg" alt="img1">
+    </div>
+</body>
+
+</html>
