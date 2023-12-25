@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         
-            body{
+            body div{
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                flex-direction: column;
             }
+            body div
         
     </style>
     <title>Quiz</title>
@@ -17,11 +19,13 @@
 <body>
     <div>
     <h1 id="question-1">What is the capital of France?</h1>
-    <button type="submit" id="option" onclick="getoption()">berlin</button>
-    <button type="submit" id="option" onclick="getoption()">delhi</button>
-    <button type="submit" id="option" onclick="getoption()">Tokyo</button>
-    <button type="submit" id="option" onclick="getoption()">paris</button>
-
+    <div>
+        <button type="submit" id="option" onclick="getoption()">berlin</button>
+        <button type="submit" id="option" onclick="getoption()">delhi</button>
+        <button type="submit" id="option" onclick="getoption()">Tokyo</button>
+        <button type="submit" id="option" onclick="getoption()">paris</button>
+    </div>
+    <div></div>
     <button type="submit" id="next">Next</button>
     <button type="submit" id="back">Back</button>
     <p id="display-result"></p>
@@ -34,12 +38,15 @@
         
         if(option == 'Berlin' || option == 'Delhi' || option == 'Tokyo')
         {
-            displayresult =  document.getElementById("display-result").innerHTML = "Wrong answer",
+            displayresult =  document.getElementById("display-result").innerHTML = "Wrong answer";
             score =  document.getElementById("display-result").innerHTML = count;
-
+            document.getElementById("").style.color('red');
         }
         else{
-            
+            displayresult =  document.getElementById("display-result").innerHTML = "Wrong answer";
+            count += 1; 
+            score =  document.getElementById("display-result").innerHTML = count;
+            document.getElementById("").style.color('red');
         }
     }
 
