@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit and Loss Quiz</title>
+    <style>
+        .quiz-container {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="start-container">
+    <button onclick="startQuiz()">Start Quiz</button>
+</div>
+
+<div id="quiz-container" class="quiz-container"></div>
+
+<script>
+    const profitAndLoss = [
+    {
+      correct: 2,
+      option: [
+          "10%",
+          "5%",
+          "20%",
+          "12%"
+      ],
+      question: "I bought 10 pencils for Rs.50 and sold them for Rs.60. What is my gain %?",
+  },
+  {
+      correct: 2,
+      option: [
+          "10%",
+          "5%",
+          "20%",
+          "12%"
+      ],
+      question: "I bought 10 pencils for Rs.50 and sold them for Rs.60. What is my gain %?",
+      
+  },
+  {
+      correct: 2,
+      option: [
+          "25%",
+          "40%",
+          "50%",
+          "60%"
+      ],
+      question: "A man sells an article at a profit of 20%. If he had bought it for 20% less but sells at the same price, find the gain %.",
+  },
+  {
+      
+      correct: 1,
+      option: [
+          "5%",
+          "5(5/19)%",
+          "4(5/19)%",
+          "5(10/19)%"
+      ],
+      question: "A shopkeeper sells his goods at the cost price but uses a false weight of 950 gm. Find his gain %.",
+  },
+  {
+      correct: 2,
+      option: [
+          "20%",
+          "15%",
+          "12.5%",
+          "10%"
+      ],
+      question: "A shopkeeper sells a bag at a gain of 25%. He offers a discount of 10% on the bag. What is his profit %?",
+  },
+  {
+      correct: 0,
+      option: [
+          "Rs.16",
+          "Rs.18",
+          "Rs.10",
+          "Rs.8"
+      ],
+      question: "A man bought 10 apples and 8 oranges for Rs.200 and sold them for Rs.212. If he gained 12.5% on the apples and lost 20% on the oranges. Find the cost of an apple.",
+  },
+  {
+      correct: 3,
+      option: [
+          "25%",
+          "20%",
+          "15%",
+          "10%"
+      ],
+      question: "John buys a second-hand car for Rs.1,80,000 and spent Rs.20,000 for repairing it. He sold it for Rs.2,20000. Find his gain %.",
+  },
+  {
+      
+      correct: 3,
+      option: [
+          "5%",
+          "10%",
+          "15%",
+          "25%"
+      ],
+      question: "12 articles were sold at the cost price of 15 articles. Find the profit %.",
+  },
+  {
+      correct: 0,
+      option: [
+          "100%",
+          "75%",
+          "50%",
+          "25%"
+      ],
+      question: "The gain triples when the selling price of an item is doubled. Find the gain %.",
+  },
+  {
+      correct: 1,
+      option: [
+          "Rs.20",
+          "Rs.21",
+          "Rs.24",
+          "Rs.25"
+      ],
+      question: "A shopkeeper bought 60 apples at the rate of Rs.240 per dozen. For how much should he sell an apple in order to gain 5%?",
+  },
+  {
+      correct: 3,
+      option: [
+          "40%",
+          "45%",
+          "50%",
+          "56.25%"
+      ],
+      question: "Tarun bought 10 toffees for Rs.8 and sold 8 toffees for Rs.10. Find his gain percent.",
+  },
+  
+  ];
+
+let currentQuestionIndex = 0;
+
+function startQuiz() {
+    document.getElementById('start-container').style.display = 'none';
+    document.getElementById('quiz-container').style.display = 'block';
+    showQuestion();
+}
+
+function showQuestion() {
+    const quizContainer = document.getElementById('quiz-container');
+    quizContainer.innerHTML = `
+        <h3>Question ${currentQuestionIndex + 1}</h3>
+        <p>${profitAndLoss[currentQuestionIndex].question}</p>
+        <ul>
+            ${profitAndLoss[currentQuestionIndex].option.map((option, optionIndex) => `
+                <li>
+                    <label>
+                        <input type="radio" name="q" value="${optionIndex}">
+                        ${option}
+                    </label>
+                </li>
+            `).join('')}
+        </ul>
+        <button onclick="nextQuestion()">Next</button>
+    `;
+}
+
+function nextQuestion() {
+    const selectedOption = document.querySelector('input[name="q"]:checked');
+
+    if (selectedOption) {
+        // Check the answer if needed
+        // You can add logic here to handle the user's response
+
+        // Move to the next question
+        currentQuestionIndex++;
+
+        if (currentQuestionIndex < profitAndLoss.length) {
+            showQuestion();
+        } else {
+            // Quiz finished
+            alert("Quiz Finished");
+            document.getElementById('quiz-container').style.display = 'none';
+        }
+    } else {
+        alert("Please select an option before moving to the next question.");
+    }
+}
+</script>
+
+</body>
+</html>
+
+
+

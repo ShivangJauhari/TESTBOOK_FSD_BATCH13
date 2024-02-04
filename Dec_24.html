@@ -65,7 +65,30 @@
             HTML: Image gallery with thumbnails and a modal.
             CSS: Style the gallery and modal.
             JavaScript: Functions to handle thumbnail click, display modal, and close modal. */
+        *{
+            padding: 10px;
             
+            box-sizing: border-box;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            flex-direction: column;
+        }          
+        .grid{
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 20px;
+            overflow-y: scroll;
+        }  
+        .grid img{
+            width: 250px;
+            height: 250px;
+        }
+        
     </style>
 </head>
 <body>
@@ -138,13 +161,35 @@ HTML: Image gallery with thumbnails and a modal.
 CSS: Style the gallery and modal.
 JavaScript: Functions to handle thumbnail click, display modal, and close modal. -->
 
-    <div class=".container">
-        <img src="/Images/cheetah abstract.jpg" alt="img1">
-        <img src="/Images/cheetah abstract.jpg" alt="img1">
-        <img src="/Images/cheetah abstract.jpg" alt="img1">
-        <img src="/Images/cheetah abstract.jpg" alt="img1">
-        <img src="/Images/cheetah abstract.jpg" alt="img1">
+    <div class="container">
+        <h1>image gallery</h1>
+        <div class="grid" onclick="fullImagedisplay()">
+            <img src="/Images/cheetah abstract.jpg" alt="img1">
+            <img src="/Images/cheetah abstract.jpg" alt="img1">
+            <img src="/Images/cheetah abstract.jpg" alt="img1">
+            <img src="/Images/cheetah abstract.jpg" alt="img1">
+            <img src="/Images/cheetah abstract.jpg" alt="img1">
+            <img src="/Images/cheetah abstract.jpg" alt="img1">
+            <img src="/Images/cheetah abstract.jpg" alt="img1">
+            <img src="/Images/cheetah abstract.jpg" alt="img1">
+            <img src="/Images/cheetah abstract.jpg" alt="img1">
+            <img src="/Images/cheetah abstract.jpg" alt="img1">
+            <img src="/Images/cheetah abstract.jpg" alt="img1">
+            <img src="/Images/cheetah abstract.jpg" alt="img1">
+            <img src="/Images/cheetah abstract.jpg" alt="img1">
+            <img src="/Images/cheetah abstract.jpg" alt="img1">
+            <img src="/Images/cheetah abstract.jpg" alt="img1">
+            <img src="/Images/cheetah abstract.jpg" alt="img1">
+            <img src="/Images/cheetah abstract.jpg" alt="img1">
+            <img src="/Images/cheetah abstract.jpg" alt="img1">
+            <img src="/Images/cheetah abstract.jpg" alt="img1">
+            <img src="/Images/cheetah abstract.jpg" alt="img1">
+        </div>
     </div>
+    <script>
+        fullImagedisplay();
+
+    </script>
 </body>
 
 </html>

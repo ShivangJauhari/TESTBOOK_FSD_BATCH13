@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+     <!-- Link to the CSS stylesheet -->
+<link rel="stylesheet" href="style.css">
+
+<!-- JavaScript file with defer attribute, which specifies that the script is executed when the page has finished parsing -->
+<script defer src="script.js"></script> 
+</head>
+<body>
+   
+    <!-- Home Container -->
+    <section>
+        <!-- User details container -->
+        <div id="user-details" class="container">
+            <!-- Logo image -->
+            <img src="/quiz_app/images/testbook_logo.jpeg" alt="testbook_Logo" width="100">
+        
+            <!-- Input field for user name and enter button -->
+            <div id="input">
+                <input type="text" id="user-name" placeholder="Your Name" required>
+                <button onclick="showCategory()" class="btn">Enter</button>
+            </div>
+        </div>
+
+        <!-- Categories container, hidden by default -->
+        <div id="category" class="container hide">
+            <h1>Select Category</h1>
+            <p>Each category will take you to the set of 10 questions.</p>
+            
+            <!-- Grid for category buttons -->
+            <div class="btn-grid">
+                <button onclick="startCategory('Pipes and Cisterns')" class="btn">Pipes and Cisterns</button>
+                <button onclick="startCategory('Probability')" class="btn">Probability</button>
+                <button onclick="startCategory('Ratio and Proportion')" class="btn">Ratio and Proportion</button>
+                <button onclick="startCategory('Profit and Loss')" class="btn">Profit and Loss</button>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <!-- Quiz Page -->
+<section id="quiz-page" class="container hide">
+    <!-- Timer display -->
+    <div id="timer">Timer: <span id="timer-value">00:00</span></div>
+    
+    <!-- Score display -->
+    <div id="score">Score: <span id="score-value">0</span></div>
+    
+    <!-- Question number display -->
+    <div id="question-number"></div>
+
+    <!-- Question display -->
+    <div id="question"></div>
+    
+    <!-- Options grid, options will be dynamically populated using JavaScript -->
+    <div id="options-grid" class="btn-grid options">
+        
+
+    </div>
+    
+    <!-- Next question button, triggers the showNextQuestion function when clicked -->
+    <button id="next-button"  class="btn">Next Question</button>
+</section>
+
+<!-- Quiz Result Page -->
+
+<section id="quiz-result" class="container hide">
+    <!-- Heading for the quiz result page -->
+    <h1>Quiz Result</h1>
+    
+    <!-- Display of participant's name -->
+    <p>Name of the participant: <span id="participant-name"></span></p>
+    
+    <!-- Display the total time taken per question -->
+    <p>Time taken per question: <span id="time-per-question"></span></p>
+    
+    <!-- Display of total time taken -->
+    <p>Total time taken: <span id="total-time"></span></p>
+    
+    <!-- Display of total questions -->
+    <p>Total Questions: <span id="total-questions"></span></p>
+    
+    <!-- Display of attempted questions -->
+    <p>Attempted: <span id="attempted"></span></p>
+    
+    <!-- Display of correct questions -->
+    <p>Correct Questions: <span id="correct-questions"></span></p>
+    
+    <!-- Display of wrong questions -->
+    <p>Wrong Questions: <span id="wrong-questions"></span></p>
+    
+    <!-- Display of score in percentage -->
+    <p>Score in percentage: <span id="score-percentage"></span>%</p>
+    
+    <!-- Buttons for starting the quiz again and going to the home page -->
+    <div id="result-buttons">
+        <button onclick="restartQuiz()" class="btn">Start Again</button>
+        <button onclick="goToHome()" class="btn">Go to Home</button>
+    </div>
+</section>
+</body>
+</html>
