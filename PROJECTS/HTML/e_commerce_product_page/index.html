@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E- Commerce Product </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">E-Commerce</span> Product</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products">Products</a></li>
+                    
+                    </p>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Main section -->
+    <main>
+        <div class="card">
+            <img src="images\Glass.jpeg" alt="Wine Glass Image">
+            <div class="description">
+                <h2>Wine Glass</h2>
+                <p>Leerdam Crisal’s Fortius range of wine glasses are known for its robust structure and elegant design. Distinct and timeless, Fortius is suitable for fine dining as well as a casual dinner.
+                </p>
+                <button class="more-details-button">More Details</button>
+                    <div class="hide">
+                    <p>IN THE DETAIL</p>
+                    
+                        <p>V370ml – H202mm</p>
+                        <p>100% glass</p>
+                        <p>Strengthened rim</p>
+                       <p>Dishwasher and glasswasher safe</p>
+                       <p> Available in a range of sizes</p>
+                    </div>
+                <p class="price">Rs 1200</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images\i23_Pro_Clarity_Clear_Magsafe_Perspective_withDevice_680x.webp" alt="Mobile Case Image">
+            <div class="description">
+                <h2>Mobile Case</h2>
+                <p>
+                    Engineered from the ground up to be completely MagSafe® compatible, connect to a range of accessories and facilitate the fastest possible charges.
+                </p>
+                <p>
+                    Choose between crystal clear and translucent iridescent backplates.                                   
+                </p>
+                <button class="more-details-button">More Details</button>
+                    <div class="hide">
+                    <p>IN THE DETAIL</p>
+                    
+                        <p>Extreme impact protection with AiroShock® defensive technology, a high-defense camera bump and ultra-rigid materials.
+                        </p>
+                        <p> We've added eyelets on either side of the case for wrist straps and phone slings.
+                        </p>
+                        <p>Designed with anti-yellowing technology and UV resistance to retain its clean looks.
+                        </p>
+                       <p> This is a case that lasts thanks to an interlocking TPU construction.</p>
+                       <p> Available in a range of colors</p>
+                    </div>
+                <p class="price">Rs 500</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images\Mobile_stand.jpg" alt="Mobile Stand Image">
+            <div class="description">
+                <h2>Mobile Stand</h2>
+                Metal Phone Stand for Mobile Phones and Tablets
+
+                <button class="more-details-button">More Details</button>
+                    <div class="hide">
+                    <p>IN THE DETAIL</p>
+                         <p>                   
+                        SHINING BLACK METAL IPHONE STAND : Shining black metal iphone stand,with lightweight and the ipad stand is portable and edgy,it perfectly work with iphone.
+                        </p>
+                        <p>
+                            PHONE DESK STAND : Phone desk stand is universal perfectly compatible with as majority of smartphones and tablets,such as iphone ipad mini, Although with case,when using an iPad, you should set it horizontally,it will also works well.                                   
+                        </p>
+                    
+                        <p>
+                            PERFECT FOR WATCHING MOVIES & READING : Cell phone stand perfect for desk or table to watch movies, read etc. sync charging your phone. Angled Support for Facetime RUBBER 
+                        </p>
+                        <p> 
+                            PROTECTED : The rubber protect the point of contact between the device and the stand keep your device from scratches and sliding.
+                        </p>
+                        <p>Designed with anti-yellowing technology and UV resistance to retain its clean looks.
+                        </p>
+                       <p> MODERATE HEIGHT : The height of hooks to bottom is moderate to charge your device, Also keep the low gravity center</p>
+                       <p> Available in a range of colors</p>
+                    </div>
+                <p class="price">Rs 800</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images\pen.jpg" alt="Pen Image">
+            <div class="description">
+                <h2>Parker Pen</h2>
+                <p>Brand Parker
+                    Writing instrument form Ballpoint Pen
+                </p>
+                <button class="more-details-button">More Details</button>
+                    <div class="hide">
+                    <p>IN THE DETAIL</p>
+                    <p>Colour	Red</p>
+                    <p>Age Range (Description)	Adult</p>
+                    <p> Material	ABS plastic</p>
+                    <p>Comes with ink cartridge</p>
+                    <p>Moulded plastic barrel and cap in high gloss colours with contrasting chrome plated stainless steel trim Fitted with standard ball point refill</p>
+                        
+                </div>
+                <p class="price">Rs 100</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Shivang Jauhari</p>
+    </footer>
+
+    <script>
+        // Select all "More Details" buttons within card elements
+        var buttons = document.querySelectorAll('.card .more-details-button');
+
+        // Loop over the buttons
+        buttons.forEach(function(button) {
+            // Apply the displayDetails function to each button
+            button.addEventListener('click', displayDetails);
+        });
+
+        function displayDetails() {
+            // Select the hide class within the parent element of the button
+            var details = this.parentElement.querySelector('.hide');
+            // Toggle the class on and off
+            details.classList.toggle('hide');            
+
+        }
+    </script>
+</body>
+</html>

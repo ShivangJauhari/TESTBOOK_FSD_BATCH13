@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- You are starting a travel blog and want to create a beautiful blog post template. It should feature a header image, a well-structured article with text and images, social media sharing buttons, and a comments section. -->
+    <header>
+        <div class="header1">
+            <h1>Travel Blog</h1>
+            <p>Welcome to my travel blog. Here you will find all the best travel tips, travel guides, and travel inspiration.</p>
+        </div>
+
+    </header>
+    <main>
+        <div class="article">
+            <h2>My Trip to Kaziranga National Park</h2>
+            <img id="changing-image" src="images/kaziranga-national-park.webp" alt="Changing Image">
+            <p>One of the most sought after wildlife holiday destinations in India, Kaziranga National park’s 430 square kilometer area sprinkled with elephant-grass meadows, swampy lagoons, and dense forests is home to more than 2200 Indian one-horned rhinoceros, approximately 2/3rd of their total world population.</p>
+            <p>
+                <span>Fauna:</span>
+                Due to the difference in altitude between the eastern and western areas of the park, here one can see mainly four types of vegetation’ like alluvial inundated grasslands, alluvial savanna woodlands, tropical moist mixed deciduous forests, and tropical semi-evergreen forests. Kumbhi, Indian gooseberry, the cotton tree, and elephant Apple are amongst the famous trees that can be seen in the park. Also, a good variety of aquatic flora can be seen in lakes, ponds, and along the river shores.
+            </p>
+            <p>
+                <span>Fauna:</span>
+                The forest region of Kaziranga Park is home to world’s largest population of Indian Rhinoceros. Other animals that can be seen in the elephant grass, marshland and dense tropical moist broadleaf forests of Kaziranga are Hoolock Gibbon, Tiger, Leopard, Indian Elephant, Sloth Bear, Wild water buffalo, swamp deer, etc. With increase in tiger population every year, the government authorities declared Kaziranga as a Tiger Reserve in the year 2006. Also here one can find good number of migratory bird species from Central Asia. The park is home to more than 480 species of birds out of which 25 are globally threatened.
+            </p>
+            
+        
+            <div class="social-media">
+                <h3>Share this post</h3>
+                <a href="https://www.facebook.com"><img src="images/facebook.png" alt="Facebook Icon"> Facebook</a>
+                <a href="https://www.instagram.com"><img src="images/instagram.png" alt="Instagram Icon"> Instagram</a>
+                <a href="https://www.pinterest.com"><img src="images/pininterst.png" alt="Pinterest Icon"> Pinterest</a>
+            </div>
+            <div class="comments">
+                <h3>Comments</h3>
+                <p>Leave a comment</p>
+                <form action="">
+                    <input type="text" placeholder="Name">
+                    <input type="text" placeholder="Email">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Comment"></textarea>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>copyright &copy 2024 Shivang Jauhari</p>
+    <script>
+        var images = ['images/kaziranga-national-park.webp', 'images/kaziranga-national-park2.webp', 'images/kaziranga-national-park4.webp']; 
+        var index = 0;
+
+        setInterval(function() {
+            index = (index + 1) % images.length; // This line ensures the index loops back to 0 after reaching the end of the array
+            document.getElementById('changing-image').src = images[index];
+        }, 5000); // Change image every 5000 milliseconds (5 seconds)
+    </script>
+</body>
+</html>

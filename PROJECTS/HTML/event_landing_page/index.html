@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const countdown = document.getElementById('countdown');
+            const eventDate = new Date('2024-12-25').getTime();
+            const updateCountdown = () => {
+                const currentDate = new Date().getTime();
+                const distance = eventDate - currentDate;
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                countdown.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        });
+    </script>
+</head>
+<body>
+    <!-- You are organizing a charity event and need a landing page to promote it. The page should include event details, a countdown timer, registration form, and images that convey the event's purpose. -->
+    <header>
+        <img src="images/charity_1.jpeg" alt="charity_image">
+        <h1>Childern Care Event</h1>
+        <p>Join us for a day of fun and fundraising for children in need.</p>
+    </header>
+    <section>
+        <div>
+            <h2>Event Details</h2>
+            <img src="images/charity_2.jpeg" alt="charity_2">
+            <p>Join us for a day of fun and fundraising for children in need. The event will include games, food, and a silent auction. All proceeds will go to the local children's hospital.</p>
+            <img src="images/charity_3.webp" alt="charity_3">
+        </div>
+        <div>
+            <h2>Countdown Timer</h2>
+            <p id="countdown"></p>
+        </div>
+        <div>
+            <h2>Register Now</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <p>copywright &copy Shivang Jauhari 2024</p>
+    </footer>
+</body>
+</html>

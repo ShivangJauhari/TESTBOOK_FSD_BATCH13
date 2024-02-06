@@ -1,0 +1,153 @@
+/* css for the body */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6em;
+}
+/* Css for the header section */
+.header1 {
+    background: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+/* Css for the .header h1 */
+.header1 h1 {
+    margin: 0;
+    font-size: 3em;
+    text-align: center;
+    color: darkgoldenrod;
+}
+/* Css for the .header p */
+.header1 p {
+    font-size: 1.5em;
+    text-align: center;
+    color: #fff;
+}
+/* Css for main tag */
+main {
+    padding: 1em;
+}
+/* Css for the .article */
+.article {
+    background: #fff;
+    padding: 1em;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px 0 #000;
+}
+.article h2 {
+    color: #333;
+    text-align: center;
+    font-size: 2em;
+}
+
+/* Css for the .article img */
+.article img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+/* Css for the .article p */
+.article p {
+    color: #555;
+}
+/* Css for the .article a */
+.article a {
+    color: darkgoldenrod;
+    text-decoration: none;
+}
+/* Css for the .article a:hover */
+.article a:hover {
+    color: #333;
+}
+/* Css for the span */
+span {
+    color: darkgoldenrod;
+    font-size: 1.5em;
+    display: block;
+}
+/* Css for the .social media */
+.social-media {
+    text-align: center;
+    margin: 20px 0;
+}
+/* Css for the .social media a */
+.social-media a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 2em;
+}
+/* Css for the .social media a:hover */
+.social-media a:hover {
+    color: darkgoldenrod;
+}
+/* Css for the social media class images */
+.social-media img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Css for the comments */
+.comments {
+    background: #fff;
+    padding: 1em;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px 0 #000;
+}
+
+/* Css for the comments h3 */
+.comments h3 {
+    color: #333;
+    text-align: center;
+    font-size: 2em;
+}
+/* Css for p in the comment class */
+.comments p {
+    color: #555;
+    font-size: 1.5em;
+}
+/* Css for the .comment-form */
+.comments form {
+    background: #fff;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px 0 #000;
+}
+/* Css for the  comments form input */
+.comments form input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+/* Css for the .comment-form textarea */
+.comments form textarea {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+/* Css for the .comment-form button */
+.comments form button {
+    padding: 10px;
+    background: darkgoldenrod;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+/* Css for the footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+

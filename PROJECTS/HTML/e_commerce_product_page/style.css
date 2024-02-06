@@ -1,0 +1,171 @@
+/* header style */
+/* Css for class container */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #528ad8;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Css for the id branding */
+#branding {
+  background-color: #528ad8;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  width: 100%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Css for the nav bar */
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #33578b;
+  padding: 0.5rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Css for the nav ul */
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+li {
+    display: inline-block;
+    position: relative;
+}
+
+li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0;
+    background-color: rgb(9, 158, 109);
+    border-radius: 5px;
+}
+
+li:hover ul {
+    display: block;
+}
+
+/* Css for the nav ul li */
+nav ul li {
+  padding: 0 1rem;
+}
+
+/* Css for the nav ul li a */
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* Css for the nav ul li a:hover */
+nav ul li a:hover {
+  color: #000;
+  background-color: #030000;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+/* Css for the nav ul li a:active */
+nav ul li a:active {
+  color: #a31919;
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+/* Css for the nav ul li a:visited */
+nav ul li a:visited {
+  color: #fff;
+}
+
+/* Css for the nav ul li a:link */
+nav ul li a:link {
+  color: #fff;
+}
+
+/* css for the product item container */
+.card {
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+}
+
+.description {
+    margin-top: 10px;
+}
+
+.price {
+    color: #b12704;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #f0c14b;
+    border: 1px solid;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Class for the hide button */
+.hide {
+    display: none;
+}
+
+/* Css for main tag flex row  */
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* Css for the footer */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

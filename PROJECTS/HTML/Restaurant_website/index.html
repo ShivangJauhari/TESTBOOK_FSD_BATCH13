@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Food</span> Restaurant</h1>
+            </div>
+        </div>
+    </header>
+    <!-- Left side Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#index.html">Home</a></li>
+            <li><a href="#about.html" target="_blank">About</a></li>
+            <li><a href="#menu.html" target="_blank">Menu</a></li>
+            <li><a href="#contact.html" target="_blank">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- Showcase section -->
+    <section id="showcase">
+        <div class="container">
+            <h1>Delicious Food</h1>
+            <p>Try our best food and drinks. You will love it!</p>
+        </div>
+    </section>
+
+    <!-- about section -->
+    <section id="about" class="hide">
+        <div class="container">
+            <article>
+                <h1>About Us</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec odio nec nunc. 
+                    Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. 
+                    Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. 
+                    
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Menu section -->
+    <section id="menu" class="hide"> 
+        <div class="container">
+            <h1>Our Menu</h1>
+            <div class="menu-item">
+                <div class="menu-image">
+                    <img src="images/pasta.jpeg" alt="pasta">
+                </div>
+                <div class="menu-description">
+                    <h3>Pasta</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec odio nec nunc. 
+                        Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. 
+                        Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. 
+                    </p>
+                    <p>Price: Rs 100</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-image">
+                    <img src="images/veg_noodles.jpg" alt="veg noodels">
+                </div>
+                <div class="menu-description">
+                    <h3>Veg Noodels</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec odio nec nunc. 
+                        Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. 
+                        Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. 
+                    </p>
+                    <p>Price: Rs 200</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-image">
+                    <img src="images/samosa.jpeg" alt="samosa">
+                </div>
+                <div class="menu-description">
+                    <h3>Samosa</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec odio nec nunc. 
+                        Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. 
+                        Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. 
+                    </p>
+                    <p>Price: Rs 10</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="hide">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <!-- Email id of the restaurant -->
+            <p>Email id: xyz@gmail.com</p>
+            <!-- Phone number of the restaurant -->
+            <p>Phone: 1234567890</p>
+            <!-- Address of the restaurant -->
+            <p>Address: 123, ABC Road, XYZ City</p>
+
+        </div>
+    </section>    
+
+    <!-- Footer section -->
+    <footer>
+        <p>Shivang Jauhari &copy; 2024</p>
+    </footer>
+<script>
+    // Get the nav bar
+    var nav = document.querySelector('nav');
+    // Get the showcase section
+    var showcase = document.querySelector('#showcase');
+    // Get the about section
+    var about = document.querySelector('#about');
+    // Get the menu section
+    var menu = document.querySelector('#menu');
+    // Get the contact section
+    var contact = document.querySelector('#contact');
+    // Get add event listener to the each item of nav bar
+    nav.addEventListener('click', function(e){
+        // Get the target of the event
+        var target = e.target;
+        // If the target is a link
+        if(target.tagName === 'A'){
+            // Get the href of the link
+            var href = target.getAttribute('href');
+            // If the href is not equal to the current page
+            if(href !== window.location.href){
+                // Prevent the default action of the link
+                e.preventDefault();
+                // Hide the showcase section
+                showcase.classList.add('hide');
+                // Hide the about section
+                about.classList.add('hide');
+                // Hide the menu section
+                menu.classList.add('hide');
+                // Hide the contact section
+                contact.classList.add('hide');
+                // If the href is equal to the index.html
+                if(href === '#index.html'){
+                    // Show the showcase section
+                    showcase.classList.remove('hide');
+                }
+                // If the href is equal to the about.html
+                if(href === '#about.html'){
+                    // Show the about section
+                    about.classList.remove('hide');
+                }
+                // If the href is equal to the menu.html
+                if(href === '#menu.html'){
+                    // Show the menu section
+                    menu.classList.remove('hide');
+                }
+                // If the href is equal to the contact.html
+                if(href === '#contact.html'){
+                    // Show the contact section
+                    contact.classList.remove('hide');
+                }
+            }
+        }
+    
+});
+</script>
+
+</body>
+</html>

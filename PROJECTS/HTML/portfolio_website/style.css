@@ -1,0 +1,199 @@
+/* HEader css */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #eb7575;
+  font-family: 'Roboto', sans-serif;
+}
+
+.logo{
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  top: 50px;
+  left: 350px;
+  
+}
+
+.logo h1{  
+  font-size: 4.5em;
+  color: #a4e5ef;
+  text-align: center;
+  position: relative;
+  top: 30px;
+  bottom: 50px;
+  right: 250px;
+  letter-spacing: 2px;
+}
+
+/* Navigation css */
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+nav ul li {
+  margin: 0px 20px;
+  padding: 10px;
+  position: relative;
+  top: 50px;
+  font-size: 1.2em;
+}
+ul li a {
+  text-decoration: none;
+  color: #953691;
+  font-weight: bold;
+  letter-spacing: 1px;
+} 
+
+/* Main Section */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: first baseline;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#home {
+  display: none;
+  flex-direction: column;
+  align-items:first baseline;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-image: url('images/hero\ image.png');
+}
+
+#home h1 {
+  font-size: 3em;
+  color: #953691;
+  margin-bottom: 20px;
+  max-width: 80%;
+  width: fit-content;
+  position: relative;
+   max-width: 80%;
+  width: fit-content;
+  position: relative;
+  top: -150px;
+  left: 50px;
+  background-color: white;
+  border: #636363 2px solid;
+  border-radius: 50px;
+  padding: 10px;
+} 
+
+#home p {
+  font-size: 1.5em;
+  color: #1c0323;
+  margin-bottom: 20px;
+  text-align: left;
+  max-width: 50%;
+  background-color: white;
+  margin: 10px auto;
+  width: fit-content;
+  position: relative;
+  border: #636363 2px solid;
+  border-radius: 50px;
+  padding: 10px;
+  position: relative;
+  top: -150px;
+  left: -150px;
+}
+
+#home div a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  position: relative;
+  top: -140px;
+  left: 550px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1.5em;
+  background-color: #953691;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  margin-top: 20px;
+  position: relative;
+  top: -150px;
+  left: 550px;
+}
+
+
+/* Css for contact form */
+#contact-form {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#contact-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#contact-form input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Footer css */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #eb7575;
+  color: white;
+  padding: 20px;
+  margin-top: 50px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+

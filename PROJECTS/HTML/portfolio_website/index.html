@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio Website</title>
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <h1>Shivang Jauhari</h1>
+                    <img src="images\thumbnail_image.jpeg" alt="thumbnail_image" title="Shivang Jauhari">
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="contact_form.html">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Main section -->
+    <main>
+        <!-- Home section -->
+        <section id="home" class="hide">
+            <div>
+                <h1>     Welcome to my website    </h1>
+                <p>My name is Shivang Jauhari and I am a web developer</p>
+                <p><strong>Shivang Jauhari</strong> is a web developer with experience in <strong>HTML, CSS, JavaScript</strong>, React. He has a passion for web development and loves to create websites and web applications.</p>
+                <a href="contact_form.html" class="btn">Contact me</a>
+            </div>
+        </section>
+     
+                
+    </main>
+    <!-- Footer section -->
+    <footer>
+        <h3>copyright &copy; 2024 Shivang Jauhari</h3>
+    </footer>
+    <script>
+        document.getElementsByTagName("img")[0].addEventListener("click", function() {
+            //change the image size 
+            this.style.width = "300px";
+            this.style.height = "250px";
+            document.getElementById("home").style.display = "flex";
+
+        });
+    </script>
+</body>
+</html>

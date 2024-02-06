@@ -1,0 +1,157 @@
+/* universal selector */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Css for the body */
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f0acacc4;
+  margin: 0;
+  padding: 0;
+}
+
+/* Css for the header */
+header {
+  background-color: #eaff2b;
+  color: #7b4778ef;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* Css for the header h1 */
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+}
+
+/* css for the header p */
+header p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+}
+
+/* Css for the image */
+img {
+   border-radius: 50%;
+}
+
+/* Css for the section */
+section {
+  padding: 2rem 0;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #f0acacc4;
+  color: #029576;
+
+}
+
+/* Css for the section h2 */
+section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  margin-left: 5px;
+  margin-bottom: 1rem;
+  border: #333 solid 2px;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding: .5rem 1rem;
+  background-color: #ff2b2f50;
+  text-decoration: underline;
+  text-shadow: #333 2px 2px 2px;
+}
+
+/* Css for the section p */
+section p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Css for the section images */
+section img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 1rem;
+}
+
+/* Css for section div first child */
+section div:first-child {
+  display: flex;
+  flex-direction: row;}
+
+/* Css for the id contdown */
+#countdown {
+  background-color: darkgray;
+  border-radius: 50%;
+  }
+
+/* Css for the form label */
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+/* Css for the form input */
+form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+  border: 1px solid #333;
+}
+
+/* Css for the form button */
+form button {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  background-color: #eaff2b;
+  color: #7b4778ef;
+  border: none;
+  cursor: pointer;
+}
+
+/* Css for the form button hover */
+form button:hover {
+  background-color: #ff2b2f;
+  color: #eaff2b;
+}
+
+
+/* Css for the footer */
+footer {
+  background-color: #eaff2b;
+  color: #7b4778ef;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+
+
+
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        /* Css for the body*/
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        /* Css for the gallery */
+        #gallery {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            overflow: auto;
+        }
+        /* Css animation display one image at time in the gallery */
+        #gallery img {
+            display: none; /* Hide all images */
+            object-fit: inherit;
+            width: 500px;
+            height: 500px;
+            animation-name: changeImage; 
+            animation-duration: 7s;
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes changeImage {
+            0% {
+                opacity: 0;
+            }
+            25% {
+                opacity: 0.5;
+            }
+            75% {
+                opacity: 0.75;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        #gallery img:first-child {
+            display: block; /* Show the first image */
+        }   
+    
+
+
+
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let index = 0;
+
+            function showNextImage() {
+                let images = document.querySelectorAll('#gallery img');
+                images.forEach((img, i) => {
+                    img.style.display = (i === index) ? 'block' : 'none';
+                });
+                index = (index + 1) % images.length; // Move to the next image, looping back to the first image after the last
+            }
+
+            setInterval(showNextImage, 7000); // Change image every 3 seconds
+        });
+    </script>
+</head>
+<body>
+    <!-- You are building a photography portfolio website and want to showcase your work in an elegant manner. Create an image gallery slideshow that automatically cycles through your photos with smooth fade-in and fade-out transitions. Users should also have the option to manually navigate through the images. -->
+    
+    <div id="gallery">
+        <img src="images/abstract-blur-with-bokeh-light-for-background-usage-vectorbackground images.jpg" alt="Image 1">
+        <img src="images/aesthetic-iphone-8k436w42fxqrt0xb.jpg" alt="Image 2">
+        <img src="images/blue stones abstract.jpg" alt="Image 3">
+        <img src="images/cheetah abstract.jpg" alt="Image 4">
+        <img src="images/download (2).jpg" alt="Image 5">
+        <img src="images/download.jpg" alt="Image 6">
+        <img src="images/download.png" alt="Image 7">
+    </div>
+
+</body>
+</html>
