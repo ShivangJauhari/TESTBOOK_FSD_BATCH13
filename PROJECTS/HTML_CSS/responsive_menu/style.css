@@ -1,0 +1,31 @@
+
+
+/* Task 3: Style the navigation menu items */
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-links li {
+    padding: 10px;
+}
+
+/* Style for smaller screens */
+@media (max-width: 767px) {
+    .nav-links {
+        flex-direction: column;
+        display: none;
+    }
+}
+
+/* Hamburger button styles */
+.hamburger {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .hamburger {
+        display: block;
+    }
+}

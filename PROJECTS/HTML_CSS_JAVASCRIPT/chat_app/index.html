@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+</head>
+<body>
+    <!-- chat application, and to implement a feature that shows when a user is typing a message. using JavaScript to display a "typing" indicator when a user starts typing and clear it when they stop typing.
+    -->
+    <input type="text" id="message" placeholder="Type a message...">
+    <p id="typing"></p>
+
+    <script>
+        const message = document.getElementById('message');
+        const typing = document.getElementById('typing');
+
+        message.addEventListener('input', () => {
+            typing.textContent = 'Typing...';
+            setTimeout(() => {
+                typing.textContent = '';
+            }, 1000);
+        });
+    </script>
+
+</body>
+</html>
