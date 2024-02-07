@@ -114,8 +114,8 @@ h1{
     opacity: 0.8;
 }
 
-/* Css for post-reviews class */
-.post-reviews{
+/* Css for post-display */
+.post-display{
     width: 80%;
     margin: 0 auto;
     padding: 1rem;
@@ -125,39 +125,110 @@ h1{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
+    display: none;
 }
-/* css for the .post-reviews button */
-.post-reviews button{
+
+.post-display div{
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 2em;
+}
+
+/* Css for the like-button */
+.like-button{
     background-color: #4CAF50;
     color: white;
-    padding: 10px 10px;
+    padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: fit-content;
-    height: fit-content;
+    width: 80%;
     border-radius: 5px;
     font-size: 2em;
 }
 
-.post-reviews button:hover {
+/* Css for the like-button on hover */
+.like-button:hover {
     opacity: 0.8;
 }
 
-/* css for .counter  class*/
-.counter{
+/* Css for the like-counter */
+.like-counter{
     width: 80%;
-    margin: 0 auto;
-    padding: 1rem;
-    background-color: #fff;
-    border-radius: 10px;
-    margin-top: 2rem;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 2em;
 }
+
+
+/* Css for the comment-button */
+.comment-button{
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+    border-radius: 5px;
+    font-size: 2em;
+}
+
+/* css for the .comment-button */
+.comment-button:hover {
+    opacity: 0.8;
+}
+
+
+/* Css for the comment-counter */
+.comment-counter{
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 2em;
+}
+
+/* css for the share button */
+.share-button{
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+    border-radius: 5px;
+    font-size: 2em;
+}
+
+/* css for the share-button on hover */
+.share-button:hover {
+    opacity: 0.8;
+}
+
+/* css for the share-counter */
+.share-counter{
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 2em;
+}
+
+
+
+
+
+
+
 
 
 
