@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Promise and Error Handling - Practice Code</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.cs
+s"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9B
+v1WTRi"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        height: 100%;
+        background-image: linear-gradient(
+          to left,
+          rgb(200, 215, 86),
+          rgb(231, 84, 145)
+        );
+        font-family: "Montserrat", "Helvetica Neue", "sans-serif";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Fetching and Displaying News</h1>
+      <table id="table" class="table"></table>
+    </div>
+    <script>
+      fetch("https://inshorts.deta.dev/news?category=all")
+        .then((res) => res.json())
+        .then((json) => {
+          json = json.data;
+          let table = document.getElementById("table");
+          for (let i = 0; i < json.length; i++) {
+            let obj = json[i];
+            console.log(obj);
+            let row = document.createElement("tr");
+            let author = document.createElement("td");
+            let content = document.createElement("td");
+            author.innerHTML = obj.author;
+            content.innerHTML = obj.content;
+            row.appendChild(author);
+            row.appendChild(content);
+            table.appendChild(row);
+          }
+          console.log(json);
+        })
+        .catch((error) => console.log(error));
+    </script>
+  </body>
+</html>

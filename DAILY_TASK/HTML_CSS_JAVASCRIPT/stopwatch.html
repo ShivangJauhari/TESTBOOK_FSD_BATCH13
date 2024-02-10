@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .wrapper,
+      .card {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .card {
+        width: 400px;
+        height: 300px;
+        background-color: #1c2333;
+        color: #ffffff;
+        border-radius: 10px;
+      }
+      .timer {
+        font-size: 50px;
+      }
+      button {
+        background-color: orange;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="card">
+        <h1>Stopwatch</h1>
+        <p class="timer">
+          <span id="seconds">00</span>:<span id="milliseconds">00</span>
+        </p>
+        <div class="btnWrapper">
+          <button id="button-start">Start</button>
+          <button id="button-stop">Stop</button>
+          <button id="button-reset">Reset</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+<script>
+  window.onload = function () {
+    var seconds = 00;
+    var milliseconds = 00;
+    var appendmilliseconds = document.getElementById("milliseconds");
+    var appendSeconds = document.getElementById("seconds");
+    var buttonStart = document.getElementById("button-start");
+    var buttonStop = document.getElementById("button-stop");
+    var buttonReset = document.getElementById("button-reset");
+    var Interval;
+    buttonStart.onclick = function () {
+      clearInterval(Interval);
+      Interval = setInterval(startTimer, 10);
+    };
+    buttonStop.onclick = function () {
+      clearInterval(Interval);
+    };
+    buttonReset.onclick = function () {
+      clearInterval(Interval);
+      milliseconds = "00";
+      seconds = "00";
+      appendmilliseconds.innerHTML = milliseconds;
+      appendSeconds.innerHTML = seconds;
+    };
+    function startTimer() {
+      milliseconds++;
+      if (milliseconds <= 9) {
+        appendmilliseconds.innerHTML = "0" + milliseconds;
+      }
+      if (milliseconds > 9) {
+        appendmilliseconds.innerHTML = milliseconds;
+      }
+      if (milliseconds > 99) {
+        seconds++;
+        appendSeconds.innerHTML = "0" + seconds;
+        milliseconds = 0;
+        appendmilliseconds.innerHTML = "0" + 0;
+      }
+      if (seconds > 9) {
+        appendSeconds.innerHTML = seconds;
+      }
+    }
+  };
+</script>

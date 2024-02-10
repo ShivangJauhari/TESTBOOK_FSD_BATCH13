@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Async And Await Practice Code</title>
+  </head>
+  <body>
+    <h1>JavaScript Async And Await</h1>
+    <h4 id="text"></h4>
+    <script>
+      const anime = [
+        {
+          title: `Naruto`,
+          body: `Naruto is a Japanese manga series written
+and illustrated by Masashi Kishimoto. It tells the story of Naruto Uzumaki,
+a young ninja who seeks recognition from his peers and dreams of becoming
+the Hokage, the leader of his village.`,
+        },
+        {
+          title: `Doraemon`,
+          body: `Nobita Nobi is a ten-year-old Japanese
+school boy, who is kind-hearted and honest, but also lazy, unlucky, weak,
+gets bad grades and is bad at sports. One day, a robot cat from the 22nd
+century named Doraemon is sent back to the past by Nobita's descendants to
+take care of Nobita so that his descendants can have a better life.`,
+        },
+      ];
+      function getanime() {
+        setTimeout(() => {
+          anime.forEach((anime_series, index) => {
+            3;
+            console.log(anime_series.title);
+          });
+        }, 1000);
+      }
+      function createanime(anime_series) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            anime.push(anime_series);
+            const error = false;
+            if (!error) {
+              resolve();
+            } else {
+              reject("Error: Something went wrong!");
+            }
+          }, 2000);
+        });
+      }
+      async function display() {
+        await createanime({
+          title: `Dragon Ball`,
+          body: `Earth, known as
+the Dragon World and designated as "Planet 4032-877" by the celestial
+hierarchy, is the main setting for the entire Dragon Ball series, as well as
+related media such as Dr. Slump, Nekomajin, and Jaco the Galactic Patrolman.
+It is mainly inhabited by Earthlings , a term used inclusively to refer to
+all of the intelligent races native to the planet, including humans,
+anthropomorphic beings, and monsters.`,
+        });
+        getanime();
+      }
+      display();
+    </script>
+  </body>
+</html>
