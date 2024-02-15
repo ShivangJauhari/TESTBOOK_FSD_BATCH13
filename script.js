@@ -17,4 +17,3 @@ submit.type = "submit";
 submit.value = "Submit";
 form.appendChild(submit);
 document.body.appendChild(form);
-
