@@ -6,16 +6,16 @@
     <title>Document</title>
   </head>
   <body>
+    <input type="text" placeholder="eNTER YOur text">
+    <button>Click</button>
     <script>
-      var maxArea = function(H) {
-        let ans = 0, i = 0, j = H.length-1
-        while (i < j) {
-        ans = Math.max(ans, Math.min(H[i], H[j]) * (j - i))
-        H[i] <= H[j] ? i++ : j--
-        }
-        return ans
-        };
-        console.log("Maximum Area In The Container Filled With Water Is",maxArea([1,8,6,2,5,4,8,3,7])); // Maximum Area In The Container Filled With Water Is 49
+      addEventListener("click", function () {
+        str = document.querySelector("input").value;
+        console.log(string_to_array(str));
+      });
+      string_to_array = function (str)
+      {return str.trim().split(" ");};
+      // console.log(string_to_array("Hello World")); 
     </script>
   </body>
 </html>

@@ -1,14 +1,15 @@
 // Binary search while loop
 arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-n = 3;
+n = 10;
 
 function binarySearch(arr, n) {
     let start = 0;
     let end = arr.length - 1;
-    let mid = Math.floor((start + end) / 2);
+    // let mid = Math.floor((start + end) / 2);
     while (start <= end)
     {
+        let mid = Math.floor((start + end) / 2);
         // To check if the mid is the element
         if (arr[mid] === n) {
             return ("Element found at index " + mid + " and value is " + arr[mid]);
@@ -21,7 +22,7 @@ function binarySearch(arr, n) {
         else {
             start = mid + 1;
         }
-        mid = Math.floor((start + end) / 2);
+        
     }
     // To return -1 if the element is not found
     return -1;
