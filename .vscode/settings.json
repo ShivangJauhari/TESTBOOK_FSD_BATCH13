@@ -1,3 +1,4 @@
 {
-    "genieai.enableConversationHistory": true
+    "genieai.enableConversationHistory": true,
+    "livePreview.defaultPreviewPath": "/PROJECTS/HTML_CSS_JAVASCRIPT/Price Range Slider/index.html"
 }

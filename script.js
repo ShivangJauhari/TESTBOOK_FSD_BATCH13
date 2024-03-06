@@ -1,24 +1,31 @@
-// function to insert a node at the beginning of a linked list at end of the linked list
+// function to find search pattern in a string all the occurences of the pattern
 
+// test cases
+// findPattern("ababababab", "abab") => [0, 2, 4]
+// findPattern("geeksforgeeks", "geeks") => [0, 8]
+// findPattern("birthday","birth") => [1]
 
-function insertAtBeginning(head, data) {
-     let newNode = new Node(data);
-     newNode.next = head;
-     head = newNode;
-     return head;
-     }
+// function findPattern(str, pattern) {
+//     let result = [];
+//     let i = 0;
+//     while (i < str.length) {
+//         let index = str.indexOf(pattern, i);
+//         if (index === -1) {
+//         break;
+//         }
+//         result.push(index);
+//         i = index + 1;
+//     }
+//     return result;
+//     }
 
-function insertAtEnd(head, data) {
-     let newNode = new Node(data);
-     if (head == null) {
-         head = newNode;
-         return head;
-     }
-     let current = head;
-     while (current.next != null) {
-         current = current.next;
-     }
-     current.next = newNode;
-     return head;
-     }
+function findPattern(str, pattern) {
+    let result = str.match(pattern);
+    if (result === null) {
+        return -1;
+    }
+    return result.index;
+    
+}
 
+console.log(findPattern("ababababab", "k"));

@@ -1,0 +1,73 @@
+/* unversal slector */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* container */
+.container {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* heading */
+.container h1 {
+    font-size: 34px;
+    margin-bottom: 5px;
+}
+
+/* label */
+label {
+    font-size: 20px;
+    margin: 5px;
+}
+
+/* input */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+
+/* range slider */
+input[type="range"] {
+    width: 100%;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+/* price-range-slider__value class */
+.price-range-slider__value {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    align-items: center;
+    margin: 10px 0;
+}
+
+
+
+
