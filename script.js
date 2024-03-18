@@ -1,31 +1,51 @@
-// function to find search pattern in a string all the occurences of the pattern
 
-// test cases
-// findPattern("ababababab", "abab") => [0, 2, 4]
-// findPattern("geeksforgeeks", "geeks") => [0, 8]
-// findPattern("birthday","birth") => [1]
 
-// function findPattern(str, pattern) {
-//     let result = [];
-//     let i = 0;
-//     while (i < str.length) {
-//         let index = str.indexOf(pattern, i);
-//         if (index === -1) {
-//         break;
-//         }
-//         result.push(index);
-//         i = index + 1;
-//     }
-//     return result;
-//     }
+// find the repeating string in a string which do not overlap
+// input: "abcabcabcabc"
+// output: "abc"
 
-function findPattern(str, pattern) {
-    let result = str.match(pattern);
-    if (result === null) {
-        return -1;
+// input: "abababab"
+// output: "ab"
+
+// input = "hehehe"
+// output = "heh"
+
+// input = "hehehehe"
+
+
+// find the repeating substing in the string
+// input: "geeksforgeeks"
+// output: "geeks"
+
+// input: "abcabcabcabc"
+// output: "abc"
+
+// input: "abababab"
+// output: "ab"
+
+// input = "hehehe"
+// output = "heh"
+
+// input = "hehehehe"
+// output = "hehe"
+
+
+function findRepeatingString(str) {
+    let n = str.length;
+    for (let i = 1; i <= n / 2; i++) {
+        let first = str.substring(0, i);
+        let second = str.substring(i, 2 * i);
+        if (first === second) {
+        return first;
+        }
     }
-    return result.index;
-    
-}
+    return str;
+    }
 
-console.log(findPattern("ababababab", "k"));
+
+console.log(findRepeatingString("abcabcabcabc")); // "abc"
+console.log(findRepeatingString("abababab")); // "ab"
+console.log(findRepeatingString("heheheh")); // "heh"
+console.log(findRepeatingString("hehehehe")); // "he"
+console.log(findRepeatingString("geeksforgeeks")); // "geeks"
+

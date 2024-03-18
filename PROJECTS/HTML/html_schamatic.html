@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Layout</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+        }
+        header{
+            background-color: gainsboro;
+            color: black;
+            padding: 1em;
+            text-align: center;
+            height: 10vh;
+            position: absolute;
+            margin-left: 35%;
+            width: 30%;
+        }
+        nav ul{
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li{
+            display: inline;
+            margin: 0 1em;
+        }
+        main{
+            height: 80vh;
+            padding: 1em;
+            text-align: center;
+            position: relative;
+        }
+        main h1{
+            margin-top: 1em;
+        }
+        footer{
+            background-color: gainsboro;
+            color: black;
+            padding: 1em;
+            height: 10vh;
+            text-align: center;
+        }
+        .marquee {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: marquee 5s alternate-reverse infinite;
+        }
+        .text-big-small {
+            animation: big-small 2s linear infinite;
+        }
+        .background-color-change {
+            animation: color-change 3s linear infinite;
+        }
+        .move-text-around {
+            position: relative;
+            animation: move-around 5s linear infinite;
+        }
+        .move-text-around-with-tail {
+            position: relative;
+            color: transparent;
+            animation: move-around-with-tail 5s linear infinite;
+            text-shadow: 0 0 5px #000;
+        }
+        .move-text-forward-merge {
+            position: relative;
+            animation: move-forward-merge 5s linear infinite;
+            perspective: 500px;
+        }
+
+        @keyframes move-forward-merge {
+            0% { transform: translateZ(-500px) translateY(-50%); opacity: 0; }
+            50% { transform: translateZ(0px) translateY(-50%); opacity: 1; }
+            100% { transform: translateZ(-500px) translateY(-50%); opacity: 0; }
+        }
+
+        @keyframes move-around-with-tail {
+            0% { transform: translate(0, 0); text-shadow: 0 0 10px #000; }
+            25% { transform: translate(200px, 0); text-shadow: -5px 0 10px #000; }
+            50% { transform: translate(200px, 200px); text-shadow: -5px -5px 10px #000; }
+            75% { transform: translate(0, 200px); text-shadow: 5px -5px 10px #000; }
+            100% { transform: translate(0, 0); text-shadow: 5px 0 10px #000; }
+        }
+
+        @keyframes move-around {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(200px, 0); }
+            50% { transform: translate(200px, 200px); }
+            75% { transform: translate(0, 200px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        @keyframes color-change {
+            0% { background-color: red; }
+            50% { background-color: yellow; }
+            100% { background-color: blue; }
+        }
+
+        @keyframes big-small {
+            0%, 100% { transform: scale(1); } /* Start and end at normal size */
+            50% { transform: scale(1.5); } /* At the midpoint of the animation, increase size by 50% */
+        }
+
+        @keyframes marquee {
+            0% { text-indent: 10% }
+            100% { text-indent: -10% }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="marquee">
+            Designer Handbags
+        </h1>
+        <h1 class="text-big-small">
+            Designer Handbags
+        </h1>
+        <h1 class="background-color-change">
+            Designer Handbags
+        </h1>
+        <h1 class="move-text-around">
+            Designer Handbags
+        </h1>
+        <h1 class="move-text-around-with-tail">
+            Designer Handbags
+        </h1>
+        <h1 class="move-text-forward-merge">
+            Designer Handbags
+        </h1>
+
+    </main>
+    
+    <footer>
+        <h4>&copy; 2024 Designer Handbags</h4>
+    </footer>
+
+</body>
+</html>
