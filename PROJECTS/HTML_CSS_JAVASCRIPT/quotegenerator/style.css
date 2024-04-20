@@ -1,0 +1,92 @@
+/**
+ * General Styles
+ */
+
+/* Reset default margin, padding, and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Set up the body element */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f8f8;
+    text-align: center;
+    background-image: radial-gradient(rgb(19, 109, 85), rgb(235, 164, 72));
+}
+
+/* Set up the container element */
+.container {
+    width: 600px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Set up the heading element */
+h1 {
+    max-width: fit-content;
+    font-size: 2.5em;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 5px;
+    margin: 20px auto;
+    background-color: #262626;
+    border-radius: 20px;
+}
+
+/* Set up the main content area */
+.main-content {
+    width: 100%;
+    height: 300px;
+    background-color: #f8f8f8;
+    border-radius: 20px;
+    padding: 20px 30px;
+    box-shadow: inset 0 0 10px #000;
+}
+
+/* Set up the text area within the main content area */
+.main-content .text-area {
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+/* Set up the author element within the main content area */
+.main-content .author {
+    margin-top: 20px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(29, 57, 57);
+}
+
+/* Set up the button area */
+.button-area button {
+    margin-top: 20px;
+    background-color: #262626;
+    color: #fff;
+    font-size: 1.3rem;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/* Set up the active state of the button */
+.button-area button:active {
+    background-color: #333;
+}
+
+/* Set up the footer element */
+footer {
+    margin-top: 70px;
+    color: #fff;
+    font-size: 1.2rem;
+}

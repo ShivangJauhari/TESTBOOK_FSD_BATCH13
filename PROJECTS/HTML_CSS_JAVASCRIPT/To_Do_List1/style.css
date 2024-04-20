@@ -1,0 +1,240 @@
+/**
+ * FILEPATH: /d:/TESTBOOK_FSD_BATCH13/PROJECTS/HTML_CSS_JAVASCRIPT/To_Do_List1/style.css
+ * 
+ * General CSS:
+ * - Sets margin and padding to 0 for all elements
+ * - Sets box-sizing to border-box for all elements
+ * - Sets font-family to 'Courier New', Courier, monospace for all elements
+ * 
+ * Body:
+ * - Centers the text
+ * - Sets the background color to rgb(124, 212, 212)
+ * 
+ * Header:
+ * - Displays as a block element
+ * - Sets the left margin to 20%
+ * - Sets the top margin to 10px
+ * - Sets the background image to a linear gradient
+ * - Sets the width to 60%
+ * - Adds a box shadow
+ * - Sets the border radius to 20px
+ * 
+ * Header h1:
+ * - Sets the font size to 2.5em
+ * - Sets the color to #fff
+ * - Adds a text shadow
+ * - Adds padding to the top and bottom
+ * 
+ * Main:
+ * - Displays as a block element
+ * - Sets the width to 80%
+ * - Sets the height to 80vh
+ * 
+ * Main section:
+ * - Displays as a block element
+ * - Sets the left margin to 20%
+ * - Sets the top margin to 10px
+ * - Sets the background color to #fff
+ * - Sets the width to 80%
+ * - Adds a box shadow
+ * - Sets the border radius to 20px
+ * 
+ * Main section input:
+ * - Sets the width to 80%
+ * - Sets the height to 40px
+ * - Adds margin and padding
+ * - Sets the font size to 1.5em
+ * - Sets the color to black
+ * - Removes the border
+ * - Sets the text wrap to wrap
+ * 
+ * Main section button:
+ * - Sets the width to 60px
+ * - Sets the height to 40px
+ * - Adds padding
+ * - Sets the font size to 1.5em
+ * - Centers the text
+ * - Sets the color to black
+ * - Removes the border
+ * - Sets the background color to #a6a6a6
+ * - Adds a border radius
+ * - Adds a box shadow
+ * 
+ * Main section button:hover:
+ * - Changes the background color to #393838
+ * - Changes the color to #fff
+ * 
+ * Main section list-items div.task-item:
+ * - Displays as a flex container
+ * - Justifies content space-between
+ * - Aligns items center
+ * - Adds padding and margin
+ * - Sets the background color to rgb(246, 231, 221)
+ * - Adds a border radius
+ * - Adds a box shadow
+ * 
+ * Main section list-items div.task-item p:
+ * - Sets the font size to 1.5em
+ * - Sets the color to #000000
+ * - Sets the width to 80%
+ * 
+ * .delete:
+ * - Sets the color to red
+ * - Sets the font size to 1.5em
+ * - Adds a transition for font size
+ * 
+ * .delete:hover:
+ * - Increases the font size on hover
+ * - Changes the cursor to pointer
+ * 
+ * .edit:
+ * - Sets the color to blue
+ * - Sets the font size to 1.5em
+ * - Adds a transition for font size
+ * 
+ * .edit:hover:
+ * - Increases the font size on hover
+ * - Changes the cursor to pointer
+ * 
+ * .done:
+ * - Sets the color to green
+ * - Sets the font size to 1.5em
+ * - Adds a transition for font size
+ * 
+ * .done:hover:
+ * - Increases the font size on hover
+ * - Changes the cursor to pointer
+ * 
+ * .completed:
+ * - Adds a line-through text decoration
+ * - Sets the color to green
+ */
+/* General CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Courier New', Courier, monospace;
+}
+
+body{
+    text-align: center;
+    background-color:rgb(124, 212, 212);
+}
+
+header{
+    display: block;
+    margin-left: 20%;
+    margin-top: 10px;
+    background-image: linear-gradient(35deg, rgb(128, 0, 128), rgba(255, 255, 0, 0.679), rgba(0, 0, 255, 0.633));
+    width: 60%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+
+header h1{
+    font-size: 2.5em;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) ;
+    padding: 10px 0;
+}
+main{
+    display: block;
+    width: 80%;
+    height: 80vh;
+}
+
+main section{
+    display: block;
+    margin-left: 20%;
+    margin-top: 10px;
+    background-color: #fff;
+    width: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+
+main section.input input{
+    width: 80%;
+    height: 40px;
+    margin: 10px 10px;
+    padding: 10px;
+    font-size: 1.5em;
+    color: black;
+    border: none;
+    text-wrap: wrap;
+}
+
+main section.input button{
+    width: 60px;
+    height: 40px;
+    padding: 10px;
+    font-size: 1.5em;
+    text-align: center;
+    color: black;
+    border: none;
+    background-color: #a6a6a6;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+main section.input button:hover{
+    background-color: #393838;
+    color: #fff;
+}
+
+main section.list-items div.task-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(246, 231, 221);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+main section.list-items div.task-item p{
+    font-size: 1.5em;
+    color: #000000;
+    width: 80%;
+}
+
+.delete{
+    color: red;
+    font-size: 1.5em;
+    transition: font-size 0.5s ease-in-out;
+}
+.delete:hover{
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.edit{
+    color: blue;
+    font: 1.5em;
+    transition: font-size 0.5s ease-in-out;
+}
+
+.edit:hover{
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.done{
+    color: green;
+    font-size: 1.5em;
+    transition: font-size 0.5s ease-in-out;
+}
+
+.done:hover{
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.completed p{
+    text-decoration: line-through;
+    color: green;
+}
+
+
