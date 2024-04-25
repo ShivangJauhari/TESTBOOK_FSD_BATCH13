@@ -1,0 +1,540 @@
+/* global css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* css variables */
+
+:root{
+    --main-color: #f3f3f3;
+    --secondary-color: #333;
+    --tertiary-color: rgb(255, 242, 0);
+    --main-font: 'Roboto', sans-serif;
+}
+
+/* body */
+
+body{
+    font-family: var(--main-font);
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* navbar */
+#navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    padding: 1rem 1rem;
+    box-shadow: 0px 0px 5px 5px rgba(255, 255, 255, 0.5);
+    flex-wrap: wrap;
+}
+
+
+#navbar::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background-color: var(--main-color);
+    background-image: url(images/Batman-Purple-Rain-Homage-DC-Comicscover.avif);
+    background-size: 100% 100%;
+    opacity: 0.5;
+    z-index: -2;
+}
+
+#navbar ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+#navbar ul li{
+    margin: 1rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#navbar ul li a{
+    text-decoration: none;
+    color: var(--tertiary-color);
+    text-shadow: 1px 1px 1px var(--tertiary-color);
+    padding: 1rem 1rem;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+#navbar ul li a:hover{
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+    font-size: 2.0rem;
+}
+
+#navbar ul li a.active{
+    text-decoration: underline;
+}
+
+#navbar #images{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navbar #images #logo img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 1rem;
+    filter: invert(100%);
+    border: 10px double var(--secondary-color);
+    box-shadow: -5px -50px 10px rgba(19, 7, 255, 0.903);
+    animation: filter 20s infinite;
+    transition: cubic-bezier(0.77, 0, 0.175, 1);
+    transform: skew(39deg, 333deg);
+    opacity: 0.5;
+}
+
+#navbar #images #the_batman img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    margin: 1rem;
+    filter: invert(100%);
+    border: 10px double var(--secondary-color);   
+    animation: filter 20s infinite;
+    transition: cubic-bezier(0.77, 0, 0.175, 1);
+    opacity: 0.5;
+    
+}
+
+#home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    padding: 1rem 1rem;
+    position: relative;
+    margin-top: 210px;
+
+}
+#home::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(images/Batman-Comic-Covers-Past-Decade.avif);
+    background-size: 100% 100%;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+#home p{
+    padding: 10px;
+    font-size: 1.5rem;
+    width: 60vw;
+    text-align: center
+}
+
+#home .btn{
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 1.5rem;
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+    
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}   
+
+#home .btn:hover{
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+    text-shadow: 1px 1px 1px var(--tertiary-color);
+}
+
+#home h1{
+    margin-top: -130px;
+    text-align: center;    
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 5rem;
+    color: var(--tertiary-color);
+    text-shadow: 1px 1px 1px var(--tertiary-color);
+}
+
+#home p{
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow: 1px 1px 1px var(--main-color);    
+    position: relative;
+}
+
+#home p::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary-color);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+#comics{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    padding: 1rem 1rem;
+    position: relative;
+    margin-top: 100px;
+}
+
+#comics::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(images/batma-cominc-background.avif);
+    background-size: 100% 100%;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+#comics h1{
+    margin-top: -130px;
+    text-align: center;
+    padding: 8px;
+    font-size: 5rem;
+    color: var(--tertiary-color);
+    text-shadow: 1px 1px 1px var(--tertiary-color);
+}
+
+/* CSS */
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider-content {
+    display: flex;
+    width: 100%; /* 4 cards, each taking 100% width */
+    transition: transform 0.3s ease-out;
+    scroll-behavior: smooth;
+}
+
+
+.card {
+    display: flex;
+    flex: 0 0 25%; /* 4 cards in a row */
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    margin: 0 0.5em;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4) inset;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+    flex-wrap: wrap;
+    justify-content: end;
+}
+
+.card h2{
+    width: 96%;
+    height: 100px;
+}
+
+.card h2, p{
+    padding: 10px;
+    text-align: center;
+    color: var(--main-color);
+    text-shadow: 1px 1px 1px var(--tertiary-color);
+    position: relative;
+}
+
+.card h2::before, p::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary-color);
+    opacity: 0.7;
+    z-index: -1;
+}
+
+.slide-left, .slide-right {
+    margin: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    background: var(--main-color);
+    border: none;
+}
+
+.slide-left {
+    left: 0.5em;
+}
+
+.slide-right {
+    right: 0.5em;
+}
+
+#gaming{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    padding: 1rem 1rem;
+    position: relative;
+    margin-top: 100px;
+}
+
+#gaming::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(images/batman_gaming_background.jpg);
+    background-size: 100% 100%;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+
+#gaming h1{
+    margin-top: -130px;
+    text-align: center;
+    padding: 8px;
+    font-size: 5rem;
+    color: var(--tertiary-color);
+    text-shadow: 1px 1px 1px var(--tertiary-color);
+}
+
+#film_tv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    padding: 1rem 1rem;
+    position: relative;
+    margin-top: 100px;
+}
+
+#film_tv::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(images/batman_gaming_background.jpg);
+    background-size: 100% 100%;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+
+#film_tv h1{
+    margin-top: -130px;
+    text-align: center;
+    padding: 8px;
+    font-size: 5rem;
+    color: var(--tertiary-color);
+    text-shadow: 1px 1px 1px var(--tertiary-color);
+}
+
+#characters{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    padding: 1rem 1rem;
+    position: relative;
+    margin-top: 100px;
+}
+
+#characters::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(images/batman_characters_background.jpg);
+    background-size: 100% 100%;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+
+#characters h1{
+    margin-top: -130px;
+    text-align: center;
+    padding: 8px;
+    font-size: 5rem;
+    color: var(--tertiary-color);
+    text-shadow: 1px 1px 1px var(--tertiary-color);
+}
+
+#collectibles{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    padding: 1rem 1rem;
+    position: relative;
+    margin-top: 100px;
+}
+
+#collectibles::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(images/batman_characters_background.jpg);
+    background-size: 100% 100%;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+
+#collectibles h1{
+    margin-top: -130px;
+    text-align: center;
+    padding: 8px;
+    font-size: 5rem;
+    color: var(--tertiary-color);
+    text-shadow: 1px 1px 1px var(--tertiary-color);
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    padding: 1rem 1rem;
+    color: var(--primary-color);
+    text-align: center;
+    position: relative;
+}
+
+footer::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary-color);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+footer section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer section h2{
+    padding: 10px;
+    font-size: 1.5rem;
+}
+
+footer section ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+footer section ul li{
+    margin: 1rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer section ul li a{
+    text-decoration: none;
+    color: var(--tertiary-color);
+    text-shadow: 1px 1px 1px var(--main-color);
+    padding: 1rem 1rem;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+footer section ul li a:hover{
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+    font-size: 2.0rem;
+}
+
+footer section ul li a.active{
+    text-decoration: underline;
+}
+
+
+
+
+
+/* keyframes */
+
+@keyframes filter{
+    0%{
+        filter:  invert(100%);
+    }
+    50%{
+        filter:  invert(0%);
+    }
+    100%{
+        filter:  invert(100%);
+    }
+}
+
