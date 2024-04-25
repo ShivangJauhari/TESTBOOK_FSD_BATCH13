@@ -520,10 +520,6 @@ footer section ul li a.active{
     text-decoration: underline;
 }
 
-
-
-
-
 /* keyframes */
 
 @keyframes filter{
@@ -538,3 +534,373 @@ footer section ul li a.active{
     }
 }
 
+
+/* Media query for iphone SE */
+
+
+@media only screen and (max-device-width: 320px) {
+    /* Adjustments for iPhone SE */
+    body, #home, #comics, #gaming, #film_tv, #characters, #collectibles, footer {
+      padding: 0.5rem; /* Adjust padding for smaller screens */
+    }
+  
+    #navbar {
+      height: 150px; /* Decrease height of navbar */
+    }
+  
+    #navbar ul {
+      display: none; /* Hide the navbar links by default */
+    }
+  
+    .hamburger {
+      display: block; /* Show hamburger icon */
+      font-size: 1.5rem; /* Adjust hamburger icon size */
+    }
+  
+    #navbar ul li {
+      margin: 0.5rem; /* Adjust margin for smaller screens */
+    }
+  
+    #navbar ul li a {
+      font-size: 1.2rem; /* Decrease font size for smaller screens */
+    }
+  
+    #navbar #images img {
+      width: 100px; /* Decrease width of images for smaller screens */
+      height: 100px; /* Decrease height of images for smaller screens */
+      margin: 0.5rem; /* Adjust margin for smaller screens */
+    }
+  
+    #home h1 {
+      font-size: 3rem; /* Decrease font size for smaller screens */
+      margin-top: -80px; /* Adjust margin-top for smaller screens */
+    }
+  
+    #home p {
+      font-size: 1rem; /* Decrease font size for smaller screens */
+    }
+  
+    .btn {
+      font-size: 1rem; /* Decrease font size for smaller screens */
+      padding: 8px; /* Adjust padding for smaller screens */
+      margin-top: 8px; /* Adjust margin for smaller screens */
+    }
+  
+    .slider {
+      width: 90%; /* Adjust width for smaller screens */
+    }
+  
+    .card {
+      width: 250px; /* Decrease width of cards for smaller screens */
+      height: 350px; /* Decrease height of cards for smaller screens */
+      margin: 0 0.3em; /* Adjust margin for smaller screens */
+    }
+  
+    .slide-left,
+    .slide-right {
+      margin: 5px; /* Adjust margin for smaller screens */
+      font-size: 1.5em; /* Decrease font size for smaller screens */
+    }
+  
+    footer section h2 {
+      font-size: 1rem; /* Decrease font size for smaller screens */
+    }
+  
+    footer section ul li a {
+      font-size: 1rem; /* Decrease font size for smaller screens */
+    }
+  }
+  
+
+/* Media query for max-width 400px */
+
+@media only screen and (max-device-width: 400px) {
+    /* Adjustments for devices with a maximum width of 400px */
+    body, #home, #comics, #gaming, #film_tv, #characters, #collectibles, footer {
+      padding: 0.5rem; /* Adjust padding for smaller screens */
+    }
+  
+    #navbar {
+      height: 150px; /* Decrease height of navbar */
+    }
+  
+    #navbar ul {
+      display: none; /* Hide the navbar links by default */
+    }
+  
+    .hamburger {
+      display: block; /* Show hamburger icon */
+      font-size: 1.5rem; /* Adjust hamburger icon size */
+    }
+  
+    #navbar ul li {
+      margin: 0.5rem; /* Adjust margin for smaller screens */
+    }
+  
+    #navbar ul li a {
+      font-size: 1.2rem; /* Decrease font size for smaller screens */
+    }
+  
+    #navbar #images img {
+      width: 100px; /* Decrease width of images for smaller screens */
+      height: 100px; /* Decrease height of images for smaller screens */
+      margin: 0.5rem; /* Adjust margin for smaller screens */
+    }
+  
+    #home h1 {
+      font-size: 3rem; /* Decrease font size for smaller screens */
+      margin-top: -80px; /* Adjust margin-top for smaller screens */
+    }
+  
+    #home p {
+      font-size: 1rem; /* Decrease font size for smaller screens */
+    }
+  
+    .btn {
+      font-size: 1rem; /* Decrease font size for smaller screens */
+      padding: 8px; /* Adjust padding for smaller screens */
+      margin-top: 8px; /* Adjust margin for smaller screens */
+    }
+  
+    .slider {
+      width: 90%; /* Adjust width for smaller screens */
+    }
+  
+    .card {
+      width: 250px; /* Decrease width of cards for smaller screens */
+      height: 350px; /* Decrease height of cards for smaller screens */
+      margin: 0 0.3em; /* Adjust margin for smaller screens */
+    }
+  
+    .slide-left,
+    .slide-right {
+      margin: 5px; /* Adjust margin for smaller screens */
+      font-size: 1.5em; /*
+    }
+
+    footer section h2 {
+      font-size: 1rem; /* Decrease font size for smaller screens */
+    }
+
+    footer section ul li a {
+      font-size: 1rem; /* Decrease font size for smaller screens */
+    }
+
+    /* Media query for max-width 600px */
+
+@media only screen and (max-device-width: 600px) {
+    /* Adjustments for devices with a maximum width of 600px */
+    body, #home, #comics, #gaming, #film_tv, #characters, #collectibles, footer {
+      padding: 0.5rem; /* Adjust padding for smaller screens */
+    }
+  
+    #navbar {
+      height: 150px; /* Decrease height of navbar */
+    }
+  
+    #navbar ul {
+      display: none; /* Hide the navbar links by default */
+    }
+  
+    .hamburger {
+      display: block; /* Show hamburger icon */
+      font-size: 1.5rem; /* Adjust hamburger icon size */
+    }
+  
+    #navbar ul li {
+      margin: 0.5rem; /* Adjust margin for smaller screens */
+    }
+  
+    #navbar ul li a {
+      font-size: 1.2rem; /* Decrease font size for smaller screens */
+    }
+  
+    #navbar #images img {
+      width: 100px; /* Decrease width of images for smaller screens */
+      height: 100px; /* Decrease height of images for smaller screens */
+      margin: 0.5rem; /* Adjust margin for smaller screens */
+    }
+  
+    #home h1 {
+      font-size: 3rem; /* Decrease font size for smaller screens */
+      margin-top: -80px; /* Adjust margin-top for smaller screens */
+    }
+  
+    #home p {
+      font-size: 1rem; /* Decrease font size for smaller screens */
+    }
+  
+    .btn {
+      font-size: 1rem; /* Decrease font size for smaller screens */
+      padding: 8px; /* Adjust padding for smaller screens */
+      margin-top: 8px; /* Adjust margin for smaller screens */
+    }
+  
+    .slider {
+      width: 90%; /* Adjust width for smaller screens */
+    }
+  
+    .card {
+      width: 250px; /* Decrease width of cards for smaller screens */
+      height: 350px; /* Decrease height of cards for smaller screens */
+      margin: 0 0.3em; /* Adjust margin for smaller screens */
+    }
+  
+    .slide-left,
+    .slide-right {
+      margin: 5px; /* Adjust margin for smaller screens */
+      font-size: 1.5em; /* Decrease font size for smaller screens */
+    }
+  
+    footer section  {
+      font-size: 1rem; /* Decrease font size for smaller screens */
+    }   
+
+    footer section ul li a {
+      font-size: 1rem; /* Decrease font size for smaller screens */
+    }
+
+    /* Media query for max-width 800px */
+
+@media only screen and (max-device-width: 800px) {
+    /* Adjustments for devices with a maximum width of 800px */
+    body, #home, #comics, #gaming, #film_tv, #characters, #collectibles, footer {
+      padding: 0.5rem; /* Adjust padding for smaller screens */
+    }
+  
+    #navbar {
+      height: 150px; /* Decrease height of navbar */
+    }
+  
+    #navbar ul {
+      display: none; /* Hide the navbar links by default */
+    }
+  
+    .hamburger {
+      display: block; /* Show hamburger icon */
+      font-size: 1.5rem; /* Adjust hamburger icon size */
+    }
+  
+    #navbar ul li {
+      margin: 0.5rem; /* Adjust margin for smaller screens */
+    }
+  
+    #navbar ul li a {
+      font-size: 1.2rem; /* Decrease font size for smaller screens */
+    }
+  
+    #navbar #images img {
+      width: 100px; /* Decrease width of images for smaller screens */
+      height: 100px; /* Decrease height of images for smaller screens */
+      margin: 0.5rem; /* Adjust margin for smaller screens */
+    }
+  
+    #home h1 {
+      font-size: 3rem; /* Decrease font size for smaller screens */
+      margin-top: -80px; /* Adjust margin-top for smaller screens */
+    }
+  
+    #home p {
+      font-size: 1rem; /* Decrease font size for smaller screens */
+    }
+  
+    .btn {
+      font-size: 1rem; /* Decrease font size for smaller screens */
+      padding: 8px; /* Adjust padding for smaller screens */
+      margin-top: 8px; /* Adjust margin for smaller screens */
+    }
+  
+    .slider {
+      width: 90
+    }
+
+    .card {
+      width: 250px; /* Decrease width of cards for smaller screens */
+      height: 350px; /* Decrease height of cards for smaller screens */
+      margin: 0 0.3em; /* Adjust margin for smaller screens */
+    }
+
+    .slide-left,
+    .slide-right {
+      margin: 5px; /* Adjust margin for smaller screens */
+      font-size: 1.5em; /* Decrease font size for smaller screens */
+    }
+
+    footer section  {
+      font-size: 1rem; /* Decrease font size for smaller screens */
+    }
+
+    footer section ul li a {
+      font-size: 1rem; /* Decrease font size for smaller screens */
+    }
+
+    /* Media query for max-width 1000px */
+
+
+@media only screen and (max-device-width: 1000px) {
+
+    body, #home, #comics, #gaming, #film_tv, #characters, #collectibles, footer {
+      padding: 0.5rem; /* Adjust padding for smaller screens */
+    }
+  
+    #navbar {
+      height: 150px; /* Decrease height of navbar */
+    }
+  
+    #navbar ul {
+      display: none; /* Hide the navbar links by default */
+    }
+  
+    #navbar ul li {
+      margin: 0.5rem; /* Adjust margin for smaller screens */
+    }
+  
+    #navbar ul li a {
+      font-size: 1.2rem; /* Decrease font size for smaller screens */
+    }
+  
+    #navbar #images img {
+      width: 100px; /* Decrease width of images for smaller screens */
+      height: 100px; /* Decrease height of images for smaller screens */
+      margin: 0.5rem; /* Adjust margin for smaller screens */
+    }
+  
+    #home h1 {
+      font-size: 3rem; /* Decrease font size for smaller screens */
+      margin-top: -80px; /* Adjust margin-top for smaller screens */
+    }
+  
+    #home p {
+      font-size: 1rem; /* Decrease font size for smaller screens */
+    }
+  
+    .btn {
+                font-size: 1rem; /* Decrease font size for smaller screens */
+                padding: 8px; /* Adjust padding for smaller screens */
+                margin-top: 8px; /* Adjust margin for smaller screens */
+        }
+        
+            .slider {
+                width: 90%;
+            }
+        
+            .card {
+                width: 250px; /* Decrease width of cards for smaller screens */
+                height: 350px; /* Decrease height of cards for smaller screens */
+                margin: 0 0.3em; /* Adjust margin for smaller screens */
+            }
+        
+            .slide-left,
+            .slide-right {
+                margin: 5px; /* Adjust margin for smaller screens */
+                font-size: 1.5em; /* Decrease font size for smaller screens */
+            }
+        
+            footer section  {
+                font-size: 1rem; /* Decrease font size for smaller screens */
+            }
+
+            footer section ul li a {
+                font-size: 1rem; /* Decrease font size for smaller screens */
+            }
+        
