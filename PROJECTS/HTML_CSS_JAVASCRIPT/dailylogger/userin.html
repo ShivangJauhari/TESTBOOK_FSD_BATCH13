@@ -1,0 +1,40 @@
+<!-- //form for sign in and sign up page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <title>User Log in</title>
+</head>
+<body>
+    <!-- //form for sign in  -->
+    <form action="action.php" method="post" id="signin">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+        <button type="submit">Sign In</button>
+    </form>
+
+    <!-- //form for sign up -->
+    <form action="action.php" method="post" id="signup">
+        <label for="firstname">Firstname</label>
+        <input type="text" name="firstname" id="firstname" placeholder="Firstname" required>
+        <label for="lastname">Lastname</label>
+        <input type="text" name="lastname" id="lastname" placeholder="Lastname" required>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required placeholder="xyz@xyz.com">
+        <input type="text" name="lastname" id="lastname" required>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required placeholder="Enter your username">
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <a href="index.html">Back</a>
+
+
+</body>
+</html>
