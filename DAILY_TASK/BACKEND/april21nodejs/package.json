@@ -12,6 +12,7 @@
   "author": "shivang jauhari",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.19.2",
     "nodemon": "^3.1.0"
   }
 }
