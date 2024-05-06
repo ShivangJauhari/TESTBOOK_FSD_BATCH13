@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Upload a file</h1>
+    <form action="/uploads" method="post" enctype="multipart/form-data">
+        <input type="text" placeholder="enter username">
+        <input type="file" name="file" id="file"><br>
+        <button type="submit">Upload</button>
+    </form>
+    <div id="message"></div>
+
+    <script>
+        const form = document.querySelector('form');
+        const message = document.getElementById('message');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const formData = new FormData(form);
+            // formData.append('username', 'John Doe');
+            // formData.append('email', 'John@example.com');
+            // console.log(formData);
+            // formData.forEach((value, key) => {
+            //     console.log(key, value);
+            // })
+            const response=await fetch('/uploads',{
+                method:'Post',
+                body:formData
+            });
+            const data= await response.text();
+            message.innerHTML=data;
+        })
+    </script>
+</body>
+
+</html>
