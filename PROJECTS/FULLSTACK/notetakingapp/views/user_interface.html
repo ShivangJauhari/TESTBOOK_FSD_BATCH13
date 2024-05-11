@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="/header.js" type="text/javascript" defer></script>
+    <script src="/footer.js" type="text/javascript" defer></script>
+    <script src="/card.js" type="text/javascript" defer></script>
+    <script src="/aside.js" type="text/javascript" defer></script>
+    <style>
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+        main app-aside {
+            flex-basis: 20%;
+            margin-right: 5% ;
+        }
+        main app-display-notes{
+            flex-basis: 70%;
+            margin-left: 5%;
+        }
+    </style>
+    <title>user_interface</title>
+</head>
+<body>
+    <app-header></app-header>
+    <main>
+        <app-aside></app-aside>
+        <app-display-notes><app-card></app-card></app-display-notes>
+    </main>
+    <app-footer></app-footer>
+</body>
+</html>

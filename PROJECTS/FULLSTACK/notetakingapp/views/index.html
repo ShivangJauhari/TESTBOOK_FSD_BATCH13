@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/header.js" type="text/javascript" defer></script>
+    <script src="/footer.js" type="text/javascript" defer></script>
+    <script src="/card.js" type="text/javascript" defer></script>
+    <title>Note Demon</title>
+    <style>
+        main {
+            text-align: center;
+            margin: 50px;
+        }  
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <app-header></app-header>
+    <main>
+        <h1>Welcome to Note Demon</h1>
+        <p>Take notes, make lists, and stay organized with Note Demon. Sign up or log in to get started.</p>
+       
+      <div class="container">
+        <app-card></app-card>
+        <app-card></app-card>
+        <app-card></app-card>
+        <app-card></app-card>
+
+    
+      </div>
+
+       
+            
+    </main>
+    <app-footer></app-footer>
+</body>
+</html>
