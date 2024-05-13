@@ -38,7 +38,43 @@ class LoginForm extends HTMLElement {
                     background-color: #555;
                 }
             </style>
-           `;
+           
+
+           <form>
+              <input type="text" placeholder="Username" required>
+              <input type="email" placeholder="Email" required>
+              <input type="password" placeholder="Password" required>
+              <button id="login">Login</button>
+           </form>
+        `;
+        document.querySelector('#login').addEventListener('click', async (e) => {
+            e.preventDefault();
+            const username = document.querySelector('input[type="text"]').value;
+            const email = document.querySelector('input[type="email"]').value;
+            const password = document.querySelector('input[type="password"]').value;
+    
+            const response = await fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, email, password })
+            });
+    
+            if (response.ok) {
+                console.log('User logged in');
+                alert('User logged in');
+                // send the user to user_interface.html page
+                window.location.href = '/user_interface';
+                
+                
+            } else {
+                console.log('Invalid username or password');
+                alert('Invalid username or password');
+                // Redirect to login.html
+                window.location.href = '/login';
+            }
+          });
   }
 
 }

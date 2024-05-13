@@ -1,10 +1,12 @@
-class SingupForm extends HTMLElement{
-    constructor(){
+class SignupForm extends HTMLElement {
+    constructor() {
         super();
     }
-    connectedCallback(){
+
+    connectedCallback() {
         this.innerHTML = `
         <style>
+            /* ... styles ... */
             form {
                 display: block;
                 top: 50%;
@@ -44,32 +46,45 @@ class SingupForm extends HTMLElement{
             <button id="signup">Sign Up</button>
         </form>
         `;
-        // Add event listener
+
         this.querySelector('#signup').addEventListener('click', async (e) => {
             e.preventDefault();
             const username = this.querySelector('input[type="text"]').value;
             const email = this.querySelector('input[type="email"]').value;
             const password = this.querySelector('input[type="password"]').value;
 
-            // Create the file path
-            const filePath = path.join(__dirname, 'user_filedata', `${username}_${email}.json`);
-
             try {
-                await fs.access(filePath);
-                console.log('User already exists');
-                alert('User already exists');
-            } catch (err) {
-                const fileData = {
-                    username,
-                    email,
-                    password
-                };
-                await fs.writeFile(filePath, JSON.stringify(fileData));
-                console.log('User created successfully');
-                alert('User created successfully');
+                const response = await fetch('/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username,
+                        email,
+                        password
+                    })
+                });
+
+                const data = await response.json();
+                console.log(data);
+
+                if (data.success) {
+                    console.log('User created successfully');
+                    alert('User created successfully');
+                    // Redirect to login.html
+                    window.location.href = '/login';
+                } else {
+                    console.log('User already exists');
+                    alert('User already exists');
+                    // Redirect to signup.html
+                    window.location.href = '/signup';
+                }
+            } catch (error) {
+                console.error('Error:', error);
             }
         });
     }
 }
 
-customElements.define('app-signup-form', SingupForm);
+customElements.define('app-signup-form', SignupForm);

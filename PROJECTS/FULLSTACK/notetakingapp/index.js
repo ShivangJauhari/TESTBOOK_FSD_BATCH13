@@ -1,99 +1,108 @@
-const fs = require('fs');
-const express = require('express');
-const path = require('path');
-const bodyParser = require('body-parser');
+import express from 'express';
+import path from 'path';
+import { access, readFile, writeFile } from 'fs/promises';
+import User from './models/user.js';
+import Note from './models/note.js';
+import cors from 'cors';
+import multer from 'multer';
+
+
+
 const app = express();
 const port = 3000;
 
+const upload = multer();
+
 // Middlewares
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'components')));
-app.use(bodyParser.json());
+app.use(express.static(path.join(process.cwd(), 'components')));
+
 
 app.get('/', (req, res) => {
   console.log('GET /');
-  res.sendFile(path.join(__dirname, 'views', 'index.html'));
+  res.sendFile(path.join(process.cwd(), 'views', 'index.html'));
 });
+
 
 app.get('/home', (req, res) => {
   console.log('GET /home');
-  res.sendFile(path.join(__dirname, 'views', 'index.html'));
+  res.sendFile(path.join(process.cwd(), 'views', 'index.html'));
 });
 
-// create the route to get login.html page from the views folder
-app.get('/login', (req, res) => {
+
+app.get('/login',upload.none(), (req, res) => {
   console.log('GET /login');
-  res.sendFile(path.join(__dirname, 'views', 'login.html'));
+  res.sendFile(path.join(process.cwd(), 'views', 'login.html'));
 });
 
-// create the route to get signup.html page from the views folder
-app.get('/signup', (req, res) => {
+
+app.get('/signup', upload.none(),(req, res) => {
   console.log('GET /signup');
-  res.sendFile(path.join(__dirname, 'views', 'signup.html'));
+  res.sendFile(path.join(process.cwd(), 'views', 'signup.html'));
 });
 
-app.get('/user_interface', (req, res) => {
-  console.log('GET /user_interface');
-  res.sendFile(path.join(__dirname, 'views', 'user_interface.html'));
-});
-
-// create a post route to handle the login form submission
+// Login route
 app.post('/login', async (req, res) => {
   console.log('POST /login');
   const { email, username, password } = req.body;
+  const filePath = path.join(process.cwd(), 'user_filedata', `${username}_${email}.json`);
 
-  // create the file path
-  const filePath = path.join(__dirname, 'user_filedata', `${username}_${email}.json`);
-
-  try {
-    await fs.access(filePath);
-    const data = await fs.readFile(filePath, 'utf8');
-    const fileData = JSON.parse(data);
-    if (fileData.password === password) {
-      console.log('Login successful');
-      res.status(200).send("Login successful");
-    } else {
-      console.log('Invalid login credentials');
-      res.status(400).send("Invalid login credentials");
+    try {
+        await access(filePath);
+        const data = await readFile(filePath, 'utf8');
+        const fileData = JSON.parse(data);
+        if (fileData.password === password) {
+          console.log('Login successful');
+          res.status(200).json({success:true, message:'Login successful'});
+        } else {
+          console.log('Invalid login credentials');
+          res.status(401).json({success:false, message:'Invalid login credentials'});
+        }
+    } catch (err) {
+        console.log('Invalid login credentials');
+        res.status(401).json({success:false, message: 'Invalid login credentials'});
     }
-  } catch (err) {
-    console.log('Invalid login credentials');
-    res.status(400).send("Invalid login credentials");
-  }
 });
 
-// create a post route to handle the signup form submission
+
+// Signup route
 app.post('/signup', async (req, res) => {
   console.log('POST /signup');
   const { username, email, password } = req.body;
-
-  // Create user object from the models folder and pass the username, email and password as arguments to that class
-  const User = require('./models/user.js');
   const newUser = new User(username, email, password);
-  
-  //check if the user already exists
-  const filePath = path.join(__dirname, 'user_filedata', `${username}_${email}.json`);
-  try {
-    await fs.access(filePath);
-    console.log('User already exists');
-    res.status(400).send("User already exists");
-  } catch (err) {
-    // User does not exist, proceed with signup
-    // Convert user object to JSON
-    const userJson = JSON.stringify(newUser);
+  const filePath = path.join(process.cwd(), 'user_filedata', `${username}_${email}.json`);
 
-    // Write user data to file
-    try {
-      await fs.writeFile(filePath, userJson);
-      console.log('Signup successful');
-      res.status(200).send('Signup successful');
-    } catch (err) {
-      console.error('An error occurred', err);
-      res.status(500).send('An error occurred');
-    }
-  }
+try {
+          await access(filePath);
+          console.log('User already exists');
+          res.status(200).json({ success: false, message: 'User already exists' });
+      } catch (err) {
+            const userJson = JSON.stringify(newUser);
+            try {
+                await writeFile(filePath, userJson);
+                console.log('Signup successful');
+                res.status(200).json({ success: true, message: 'Signup successful' });
+            } catch (err) {
+                console.error('An error occurred', err);
+                res.status(500).json({ success: false, message: 'An error occurred' });
+            }
+          }
 });
+
+
+// add a route to user_interface.html
+app.get('/user_interface', (req, res) => {
+  console.log('GET /user_interface');
+  res.sendFile(path.join(process.cwd(), 'views', 'user_interface.html'));
+});
+
+
+
+
+
+
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);

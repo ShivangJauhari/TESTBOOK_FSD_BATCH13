@@ -20,6 +20,7 @@ class Card extends HTMLElement {
                 .card h3 {
                     font-size: 24px;
                     margin: 0;
+                    text-align: center;
                 }
                 .card h4 {
                     color: #333;

@@ -2,7 +2,7 @@
 // create a user class with a schema for the user model and export it as a module to be used in the class user and create its json 
 // object to be used in the user class schema
 // create a note class to get note properties
-export class Note {
+export default class Note {
     constructor(title, description, timestamp, isCompleted) {
         this.title = title;
         this.description = description;
