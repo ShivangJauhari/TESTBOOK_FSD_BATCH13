@@ -1,4 +1,4 @@
-const fs = require('fs').promises;
+const fs = require('fs');
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -8,7 +8,7 @@ const port = 3000;
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('components'));
+app.use(express.static(path.join(__dirname, 'components')));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
