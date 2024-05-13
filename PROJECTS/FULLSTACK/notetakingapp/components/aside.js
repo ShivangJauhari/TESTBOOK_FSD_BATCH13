@@ -34,7 +34,7 @@ class Aside extends HTMLElement{
             }
         </style>
         <aside>
-            <button id="newNote">New Note</button>
+            <button id="newNote">Add New Note</button>
             <button id="getAllNote">Get All Notes</button>
             <button id="getNoteWithTitle">Get Note with Title</button>
             <button id="deleteAllNotes">Delete All Notes</button>

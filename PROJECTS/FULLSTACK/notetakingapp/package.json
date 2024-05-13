@@ -1,7 +1,7 @@
 {
   "name": "fullstack_notetaking_app",
   "version": "1.0.0",
-  "type": "module",
+
   "description": "note taking app",
   "main": "index.js",
   "scripts": {
