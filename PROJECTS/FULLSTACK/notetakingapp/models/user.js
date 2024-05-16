@@ -3,63 +3,78 @@ import path from 'path';
 import fs from 'fs';
 import Note from './note.js';
 
-let userId = 0;
+
 
 export default class User {
+
+    static userId = 0;
+
     constructor(username, email, password) {
         this.username = username;
         this.email = email;
         this.password = password;
         this.timestamp = new Date();
-        this.id = userId++;
+        this.id = User.userId++;
         this.notes = [];
+        this.filename = path.join(cwd(), 'user_filedata', `${this.username}_${this.email}.json`);
+        this.saveToFile();
+
     }
 
-    createUserJsonFile() {
-        const userJson = {
+   saveToFile(cb) {
+        let user = {
             username: this.username,
             email: this.email,
-            password: this.password, 
+            password: this.password,
             timestamp: this.timestamp,
             id: this.id,
             notes: this.notes,
-        }
-
-        const userJsonFileName = `${this.username}_${this.email}.json`;
-        fs.writeFileSync(path.join(cwd(), 'user_filedata', userJsonFileName), JSON.stringify(userJson));
+            filename: this.filename
+        
+        };
+        fs.writeFile(this.filename, JSON.stringify(this), (err) => {
+            if (err) {
+                cb(err);
+            } else {
+                cb(null);
+            }
+        });
     }
 
-    addNoteToUser(title, description, timestamp, isCompleted) {
-        const note = new Note(title, description, timestamp, isCompleted);
+
+
+    addNote() {
+        const note = new Note();
         this.notes.push(note);
-        this.createUserJsonFile();
+        fs.writeFileSync(this.filename, JSON.stringify(this.notes));
     }
 
-    getAllNotesFromUser() {
+    getAllNotes() {
+        this.notes = JSON.parse(fs.readFileSync(this.filename));
         return this.notes;
     }
 
-    getNoteFromUser(noteTitle) {
-        return this.notes.find(note => note.title === noteTitle);
+    getNoteWithTitle(title) {
+        this.getAllNotes();
+        return this.notes.find(note => note.title === title);
     }
 
-    editNoteFromUser(noteTitle, newNoteTitle, newNoteDescription) {
-        const note = this.notes.find(note => note.title === noteTitle);
-        note.editTitle(newNoteTitle);
-        note.editDescription(newNoteDescription);
-        this.createUserJsonFile();
+    sortNotesByTitle() {
+        this.getAllNotes();
+        this.notes.sort((a, b) => a.title.localeCompare(b.title));
+        fs.writeFileSync(this.filename, JSON.stringify(this.notes));
+        return this.notes;
     }
 
-    deleteNoteFromUser(noteTitle) {
-        this.notes = this.notes.filter(note => note.title !== noteTitle);
-        this.createUserJsonFile();
+    sortNotesByDate() {
+        this.getAllNotes();
+        this.notes.sort((a, b) => new Date(a.date) - new Date(b.date));
+        fs.writeFileSync(this.filename, JSON.stringify(this.notes));
+        return this.notes;
     }
 
-    getUser() {
-        return {
-            username: this.username,
-            email: this.email,
-            notes: this.notes,
-        }
+    deleteAllNotes() {
+        this.notes = [];
+        fs.writeFileSync(this.filename, JSON.stringify(this.notes));
     }
 }

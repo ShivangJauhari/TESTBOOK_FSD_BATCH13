@@ -8,6 +8,7 @@ class Aside extends HTMLElement{
             aside {
                 display: flex;
                 flex-direction: column;
+                gap: 10px;
                 top: 50%;
                 left: 0;
                 transform: translate(-10%, -50%);
@@ -31,19 +32,34 @@ class Aside extends HTMLElement{
             }
             button:hover {
                 background-color: #555;
-            }
+            }          
+
+
         </style>
         <aside>
             <button id="newNote">Add New Note</button>
             <button id="getAllNote">Get All Notes</button>
             <button id="getNoteWithTitle">Get Note with Title</button>
+            <button id="sortNoteTitle">Sort Notes By Title</button>
+            <button id="sortNoteDate">Sort Notes By Date</button>
             <button id="deleteAllNotes">Delete All Notes</button>
         </aside>
-        `;
-            // Add event listeners
+        `;  
+    
+                  
+
+             
+
+        
+
+        
+        
+
+
+        // Add event listeners
         this.querySelector('#newNote').addEventListener('click', async () => {
-            // Call function from User class
-            await User.newNote();
+            // Call function from User class to add a new note to the user file data    
+            await loggedInUser.addNote();
         });
 
         this.querySelector('#getAllNote').addEventListener('click', async () => {
@@ -59,6 +75,18 @@ class Aside extends HTMLElement{
         this.querySelector('#deleteAllNotes').addEventListener('click', async () => {
             // Call function from User class
             await User.deleteAllNotes();
+        });
+
+        // call function from User class to sort notes by date
+        this.querySelector('#sortNoteDate').addEventListener('click', async () => {
+            // Call function from User class
+            await User.sortNotes();
+        });
+
+        // call function from User class to sort notes by title
+        this.querySelector('#sortNoteTitle').addEventListener('click', async () => {
+            // Call function from User class
+            await User.sortNotesTitle();
         });
         
     }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <script src="/header.js" type="text/javascript" defer></script>
+    <script src="/user_interfaceheader.js" type="text/javascript" defer></script>
     <script src="/footer.js" type="text/javascript" defer></script>
     <script src="/card.js" type="text/javascript" defer></script>
     <script src="/aside.js" type="text/javascript" defer></script>
@@ -27,11 +27,30 @@
     <title>user_interface</title>
 </head>
 <body>
-    <app-header></app-header>
+    <app-userHeader></app-userHeader>
     <main>
         <app-aside></app-aside>
         <app-display-notes><app-card></app-card></app-display-notes>
     </main>
     <app-footer></app-footer>
+    <script>
+          
+            window.onload = async function() {
+                const username = sessionStorage.getItem('username');
+                const email = sessionStorage.getItem('email');
+            
+                if (username && email) {
+                    const response = await fetch(`/user_interface/${encodeURIComponent(username)}_${encodeURIComponent(email)}.json`);
+                    const data = await response.json();
+            
+                    console.log(data);
+                    // save data in session storage
+                    sessionStorage.setItem('userData', JSON.stringify(data));
+                } else {
+                    console.error('Username or email not found in session storage');
+                }
+            }
+           
+    </script>
 </body>
 </html>

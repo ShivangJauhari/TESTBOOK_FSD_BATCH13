@@ -70,7 +70,7 @@ class SignupForm extends HTMLElement {
                 console.log(data);
 
                 if (data.success) {
-                    console.log('User created successfully');
+                    console.log(data.message);
                     alert('User created successfully');
                     // Redirect to login.html
                     window.location.href = '/login';

@@ -60,13 +60,16 @@ class LoginForm extends HTMLElement {
                 },
                 body: JSON.stringify({ username, email, password })
             });
-    
+            console.log(response);
             if (response.ok) {
                 console.log('User logged in');
                 alert('User logged in');
-                // send the user to user_interface.html page
+                // start the session by saving the username and email in the session storage
+                sessionStorage.setItem('username', username);
+                sessionStorage.setItem('email', email);
+                // go to the /user_interface route
                 window.location.href = '/user_interface';
-                
+               
                 
             } else {
                 console.log('Invalid username or password');
