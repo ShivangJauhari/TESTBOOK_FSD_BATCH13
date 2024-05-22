@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovelDetails</title>
+</head>
+<body>
+    <div>
+        <h1>
+            <%= novel.title %>
+        </h1>
+        <ul>
+            <li>ISBN: <%= novel.isbn %></li>
+            <li>Subtitle: <%= novel.subtitle %></li>
+            <li>Author: <%= novel.author %></li>
+            <li>Published: <%= novel.published %></li>
+            <li>Publisher: <%= novel.publisher %></li>
+            <li>Pages: <%= novel.pages %></li>
+            <li>Description: <%= novel.description %></li>
+            <li>Website: <a href="<%= novel.website %>"><%= novel.website %></a></li>
+    </div>
+</body>
+</html>

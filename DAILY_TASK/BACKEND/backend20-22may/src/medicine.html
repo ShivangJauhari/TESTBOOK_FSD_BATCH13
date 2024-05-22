@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Medicine Data</h1>
+    <table id="medicineTable" border="1">
+        <thead>
+            <tr>
+                <th>drug_code</th>
+                <th>class_name</th>
+                <th>drug_identification_number</th>
+                <th>brand_name</th>
+                <th>descriptor</th>
+                <th>number_of_ais</th>
+                <th>ai_group_no</th>
+                <th>company_name</th>
+                <th>last_update_date</th>
+            </tr>
+        </thead>
+    </table>
+    <tbody id="tableBody">
+
+    </tbody>
+
+    <script>
+        fetch('http://localhost:3000/medicine')
+            .then(res => res.json())
+            .then((data) => {
+                console.log(data);
+                const table = document.getElementById('tableBody');
+                data.forEach(medicine => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${medicine.drug_code}</td>
+                        <td>${medicine.class_name}</td>
+                        <td>${medicine.drug_identification_number}</td>
+                        <td>${medicine.brand_name}</td>
+                        <td>${medicine.descriptor}</td>
+                        <td>${medicine.number_of_ais}</td>
+                        <td>${medicine.ai_group_no}</td>
+                        <td>${medicine.company_name}</td>
+                        <td>${medicine.last_update_date}</td>
+                        <td>
+                            <button onclick='editRow(this)'>Edit</button>
+                            <button onclick=deleteRow('${medicine.drug_code}')>Delete</button>
+                            <button style = 'display:none;'>Save</button>
+
+                    `;
+                    table.appendChild(row); // Append the row to the table
+                });
+            });
+
+            function editRow(){
+                console.log('Edit button clicked');
+                // code to edit the row
+                const row = button.parentNode.parentNode;
+                const cell = row.querySelectorAll('td:not(:last-child)');
+                cell.forEach((cell) => {
+                    const text = cell.innerText;
+                    cell.innerHTML = `<input type='text' value='${text}'>`;
+                    cell.appendChild(input);
+                });
+                button.style.display = 'none';
+                button.nextElementSibling.style.display = 'block';
+            }
+
+
+            async function saveRow(button){
+                console.log('Save button clicked');
+                const row = button.parentNode.parentNode;
+                const cell = row.querySelectorAll('td:not(:last-child)');
+                const data = {};
+                cell.forEach((cell, index) => {
+                    const input = cell.querySelector('input');
+                    data[cell.cellIndex] = input.value;
+                    cell.innerHTML = input.value;
+                });
+                button.style.display = 'none';
+                button.previousElementSibling.style.display = 'block';
+
+                const drug_code = row.querySelector('td').innerText;
+                const response = await fetch(`http://localhost:3000/medicine/${drug_code}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+                console.log(result);              
+            }
+
+            function deleteRow(drug_code){
+                console.log('Delete button clicked');
+                fetch(`http://localhost:3000/medicine/${drug_code}`, {
+                    method: 'DELETE'
+                })
+                .then(res => res.json())
+                .then((data) => {
+                    console.log(data);
+                });
+            }
+
+    </script>
+
+</body>
+</html>

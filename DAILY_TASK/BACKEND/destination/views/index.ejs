@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novels Details</title>
+</head>
+<body>
+    <h1>Novel List</h1>
+    <ul>
+        <% novels.forEach(novel => { %>
+            <li>
+                <a href="/novels/<%= novel.id %>">
+                    <%= novel.title %>
+                </a>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>
