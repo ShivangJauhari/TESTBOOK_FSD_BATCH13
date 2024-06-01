@@ -21,24 +21,16 @@ export default class InputHandler{
         window.addEventListener('keyup', (e) => {
             switch(e.key){
                 case 'ArrowUp':
-                    if(this.lastKey === 'ArrowUp'){
-                        this.lastKey = '';
-                    }
+                    this.lastKey = 'ReleaseArrowUp';
                     break;
                 case 'ArrowDown':
-                    if(this.lastKey === 'ArrowDown'){
-                        this.lastKey = '';
-                    }
+                    this.lastKey = 'ReleaseArrowDown';
                     break;
                 case 'ArrowLeft':
-                    if(this.lastKey === 'ArrowLeft'){
-                        this.lastKey = '';
-                    }
+                    this.lastKey = 'ReleaseArrowLeft';
                     break;
                 case 'ArrowRight':
-                    if(this.lastKey === 'ArrowRight'){
-                        this.lastKey = '';
-                    }
+                    this.lastKey = 'ReleaseArrowRight';
                     break;
             }
         });
