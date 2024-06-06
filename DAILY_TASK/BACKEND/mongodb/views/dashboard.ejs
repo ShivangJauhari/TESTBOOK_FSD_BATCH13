@@ -1,0 +1,93 @@
+
+<%- include('layouts/header.ejs') %>
+
+<h1> Welcome, </h1>
+
+<h2 class="mb-4"><%= user.name %></h2>
+
+<div class="row">
+    <div class="col-md-3">
+        <ul class="list-group">
+            <%
+            if(users.length >0){
+                for(let i=0; i<users.length; i++){
+                    %>
+                    <li class="list-group-item list-group-item-dark cursor-pointer user-list">
+                        <img src="<%= 'http://localhost:3000/'+users[i]['image'] %>" alt="<%= users[i]['name']%>" class="img-fluid rounded-circle" style="width: 50px; height: 50px;">
+                        <%= users[i]['name'] %>
+
+                                    <% if(users[i]['isOnline'] === true) { %>
+                                    <span class="badge bg-success rounded-pill float-end" id="<%= users[i]['_id']%>">Online</span>
+                                 <% } else { %>
+                                <span class="badge bg-danger rounded-pill float-end" id="<%= users[i]['_id']%>">Offline</span>
+                                <% } %>
+                                            
+                        %>
+                    </li>
+                    <%
+                }
+            } 
+            %>
+        </ul>
+    </div>
+
+    <div class="col-md-9">
+
+        <h3 class="start-head">Click to start chat</h3>
+        <div class="chat-section">
+            <div id="chat-container">
+
+            </div>
+
+            <form action="" id="chat-form">
+                <input type="text" name="message" id="message" placeholder="Type your message here" class="border" required>
+                <button type="submit" class="btn btn-primary" value="Send Message" >Send Message</button>
+
+            </form>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+<script>
+
+
+    const sender_id = '<%= user._id %>';
+    const socket = io('/user-namespace', {
+        auth:{
+            token: sender_id,
+        }
+    });
+
+
+    $(document).ready(function(){
+        
+        $('.user-list').click(function(){
+           $('.start-head').hide();
+           $('.chat-section').show();
+        });
+    });
+
+    // get user online status
+        socket.on('getOnlineUsers', function(data){
+        console.log(data);
+        $('#'+data.user_id).text('Online');
+        $('#'+data.user_id).removeClass('bg-danger');
+        $('#'+data.user_id).addClass('bg-success');
+    });
+
+    // udate user offline status
+     
+       socket.on('getOfflineUsers', function(data){
+        console.log(data);
+        $('#'+data.user_id).text('Offline');
+        $('#'+data.user_id).removeClass('bg-success');
+        $('#'+data.user_id).addClass('bg-danger');
+    });
+
+</script>
+
+<%- include('layouts/footer.ejs') %>
