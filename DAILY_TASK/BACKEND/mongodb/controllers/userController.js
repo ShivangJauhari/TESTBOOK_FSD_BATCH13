@@ -1,5 +1,6 @@
 const User = require('../models/userModels');
 const bcrypt = require('bcrypt');
+const Chat = require('../models/chatModels');
 
 
 
@@ -92,6 +93,44 @@ const loadDashboard =  async (req, res) =>{
 
 }
 
+const saveChat =  async (req, res) =>{
+    try{
+        const chat = new Chat({
+            sender_id : req.body.sender,
+            receiver_id : req.body.receiver,
+            message : req.body.message, 
+        });
+
+        var newChat = await chat.save();
+        res.status(200).json({success: true,message: 'Chat saved successfully', data: newChat});
+
+        
+    }catch (error){
+        res.status(400).sender({ success: false, message: error.message});
+    }
+}
+
+
+const deleteChat =  async (req, res) =>{
+    try{
+        const chat = await Chat.findByIdAndDelete({_id: req.body.chat_id});
+        res.status(200).json({success: true,message: 'Chat deleted successfully', data: chat});
+    }catch (error){
+        res.status(400).sender({ success: false, message: error.message});
+    }
+}
+
+const updateChat =  async (req, res) =>{
+    try{
+        const chat = await Chat
+        .findByIdAndUpdate({_id: req.body.chat_id}, {$set: {message: req.body.message}}, {new: true});
+        res.status(200).json({success: true,message: 'Chat updated successfully', data: chat});
+    }
+    catch (error){
+        res.status(400).sender({ success: false, message: error.message});
+    }
+}
+
 
 
 module.exports = {
@@ -100,5 +139,8 @@ module.exports = {
     loadLogin,
     login,
     logout,
-    loadDashboard
+    loadDashboard,
+    saveChat,
+    deleteChat,
+    updateChat,
 }

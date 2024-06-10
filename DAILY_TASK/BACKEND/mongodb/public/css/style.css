@@ -8351,3 +8351,40 @@ a[data-toggle="collapse"] {
     .chat-section{
       display: none; 
     }
+
+    .chat-box-user{
+      text-align: right;
+      margin: 10px;
+       
+    }
+
+    .chat-box-user h5{
+      color: indigo;
+      font-size: 25px;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .chat-box-other{
+      text-align: left;
+      margin: 10px;
+      
+    }
+
+    .chat-box-other h5{
+      color: indianred;
+      font-size: 25px;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .fa-trash{
+      color: red;
+    }
+
+    .fa-edit{
+      color: blue;
+    }
+
+
+
+
+

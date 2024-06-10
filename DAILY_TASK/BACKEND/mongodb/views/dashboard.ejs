@@ -12,7 +12,7 @@
             if(users.length >0){
                 for(let i=0; i<users.length; i++){
                     %>
-                    <li class="list-group-item list-group-item-dark cursor-pointer user-list">
+                    <li class="list-group-item list-group-item-dark cursor-pointer user-list" data-id="<%= users[i]['_id']%>">
                         <img src="<%= 'http://localhost:3000/'+users[i]['image'] %>" alt="<%= users[i]['name']%>" class="img-fluid rounded-circle" style="width: 50px; height: 50px;">
                         <%= users[i]['name'] %>
 
@@ -36,7 +36,8 @@
         <h3 class="start-head">Click to start chat</h3>
         <div class="chat-section">
             <div id="chat-container">
-
+           
+                </div>
             </div>
 
             <form action="" id="chat-form">
@@ -46,16 +47,68 @@
             </form>
         </div>
     </div>
-
-
-
-
 </div>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="deleteChatModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Delete Chat</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <form action="" method="">
+        <input type="hidden" name="id" id="delete-message-id">
+        <div class="modal-body">
+          <p>Are you sure you want to delete below message?</p>
+          <p><b id="delete-message"></b></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+   <!-- Modal -->
+   <div class="modal fade" id="updateChatModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Delete Chat</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <form action="" method="">
+        <input type="hidden" name="id" id="udate-message-id">
+        <input type="text" name="message" id="update-message" required placeholder="Enter Message">
+        <div class="modal-body">
+          
+          <p><b id="update-message"></b></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
 <script>
 
 
-    const sender_id = '<%= user._id %>';
+    var sender_id = '<%= user._id %>';
+    var receiver_id = '<%= user._id %>';
     const socket = io('/user-namespace', {
         auth:{
             token: sender_id,
@@ -66,8 +119,12 @@
     $(document).ready(function(){
         
         $('.user-list').click(function(){
+           var userId = $(this).attr('data-id');
+           receiver_id = userId;
            $('.start-head').hide();
            $('.chat-section').show();
+
+           socket.emit('existsChats', {sender_id: sender_id, receiver_id: receiver_id});
         });
     });
 
@@ -86,6 +143,138 @@
         $('#'+data.user_id).text('Offline');
         $('#'+data.user_id).removeClass('bg-success');
         $('#'+data.user_id).addClass('bg-danger');
+    });
+
+
+    // chat save of user
+    $('#chat-form').submit(function(e){
+        e.preventDefault();
+        var message = $('#message').val();
+
+        $.ajax({
+            url: '/save-chat',
+            type: 'POST',
+            data: {sender_id: sender_id, receiver_id: receiver_id, message: message},
+            success: function(response){
+                if(response.success){
+                    console.log(resposne.data.message);
+                    $('#message').val('');
+                    let chat = response.data.message;
+                    let html = ` <div class="chat-box-user" id='`+response.data._id+`'>
+                    <h5>` +chat+ `<i class="fa fa-trash" aria-hidden="true" data-id='`+chats[i]['response.data._id']+`' data-toggle="modal" data-target="#deleteChatModal"></i>
+                        <i class="fa fa-edit" aria-hidden="true" data-id='`+chats[i]['response.data._id']+`' data-toggle="modal" data-target="#deleteChatModal"></i></h5>
+                    </div>`;
+                    $('#chat-container').append(html);
+                    socket.emit('newChat', response.data);
+                    scrollChat();
+
+                }else{
+                    alert('data.message');}
+            }
+        });
+    });
+
+    socket.on('loadNewChat', function(data){
+        console.log(data);
+        if(sender_id === data.receiver_id && receiver_id === data.sender_id){
+            let chat = data.message;
+            let html = ` <div class="chat-box-other" >
+            <h5>` +chat+ `<i class="fa fa-trash" aria-hidden="true" data-id='`+chats[i]['_id']+`></i> <i class="fa fa-edit" aria-hidden="true" data-id='`+chats[i]['_id']+`></i></h5>
+            </div>`;
+            $('#chat-container').append(html);
+        }
+
+        scrollChat();
+        
+    });
+
+    // load old chats
+
+    socket.on('loadExistsChats', async function(data){
+        console.log(data);
+        $('#chat-container').html('');
+
+        var chats = data.chats;
+
+        let html = '';
+        for(let i=0; i<chats.length; i++){
+            if(chats[i].sender_id === sender_id){
+                html += ` <div class="chat-box-user" id='`+chats[i]['_id']+`'>
+                <h5>` +chats[i]['message']+` <i class="fa fa-trash" aria-hidden="true" data-id='`+chats[i]['_id']+`' data-toggle="modal" data-target="#deleteChatModal"></i>
+                    <i class="fa fa-edit" aria-hidden="true" data-id='`+chats[i]['_id']+`' data-toggle="modal" data-target="#deleteChatModal"></h5>
+                </div>`;
+            }else{
+                html += ` <div class="chat-box-other">
+                <h5>` +chats[i]['message']+ `</h5>
+                </div>`;
+            }
+        }
+        $('#chat-container').append(html);
+    });
+
+    function scrollChat(){
+        $('#chat-container').animate({
+            scrollTop: $('#chat-container').get(0).scrollHeight
+        }, 100);
+    }
+
+    // delete chat
+    $(document).on('click', '.fa-trash', function(){
+        var chat_id = $(this).attr('data-id');
+        $('#delete-message-id').val(chat_id);
+        var message = $(this).parent().text();
+        $('#delete-message').text(message);
+    });
+
+    $('#delete-message-id').submit(function(e){
+        e.preventDefault();
+        var chat_id = $('#delete-message-id').val();
+        $.ajax({
+            url: '/delete-chat',
+            type: 'POST',
+            data: {chat_id: chat_id},
+            success: function(response){
+                if(response.success){
+                    $('#'+chat_id).remove();
+                    $('#deleteChatModal').modal('hide');
+                    socket.emit('chatDeleted', {chat_id: chat_id});
+                }else{
+                    alert(response.message);
+                }
+            }
+        });
+    });
+
+    socket.on('chatDeleted', function(data){
+        $('#'+data.chat_id).remove();
+    });
+
+    // update chat
+    $(document).on('click', '.fa-edit', function(){
+        var chat_id = $(this).attr('data-id');
+        $('#update-message-id').val(chat_id);
+        var message = $(this).parent().text();
+        $('#update-message').val(message);
+    });
+
+    $('#update-message-id').submit(function(e){
+        e.preventDefault();
+        var chat_id = $('#update-message-id').val();
+        var message = $('#update-message').val();
+        $.ajax({
+            url: '/update-chat',
+            type: 'POST',
+            data: {chat_id: chat_id, message: message},
+            success: function(response){
+                if(response.success){
+                    $('#'+chat_id).text(message);
+                    $('#updateChatModal').modal('hide');
+                    socket.emit('chatUpdated', {chat_id: chat_id, message: message});
+                }else{
+                    alert(response.message);
+                }
+            }
+        });
     });
 
 </script>
