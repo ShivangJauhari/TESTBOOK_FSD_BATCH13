@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Health Care</title>
+    <style>
+        header{
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        nav{
+            display: flex;
+            justify-content: center;
+        }
+        nav a{
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+        main{
+            padding: 20px;
+        }
+        section{
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #333;
+        }
+        footer{
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        div{
+            display: block;
+            width: 80%;
+            height: 100%;
+            background-color: lightcyan;
+            border-radius: 20px;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Health Care Center</h1>
+        <nav>
+             <a href="#Home">Home</a>
+             <a href="#About">About</a>
+             <a href="#Contact">Contact</a>
+             <a href="#Services">Services</a>
+             
+        </nav>
+    </header>
+    <main>
+        <section id="Home">
+            <h1>Your Health is our priority</h1>
+            <button type="button">Get health tips</button>
+            <div class="hidden" id="data-container"></div>
+        </section>
+        <section id="About">
+            <h1>Your Health is our priority</h1>
+        </section>
+        <section id="Contact">
+            <h1>Your Health is our priority</h1>
+        </section>
+        <section id="Services">
+            <ul>
+                <li>Book Appointments</li>
+                <li>Shedule Appointments</li>
+                <li>Cancle</li>
+                <li>A</li>
+                <li>A</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Health Care Center</p>
+    </footer>
+    <script>
+        const button = document.querySelector('button');
+        const div = document.querySelector('div');
+        button.addEventListener('click', function(){
+            // show the div
+            div.classList.toggle('hidden');
+            // call the function to display the health tips
+            displayHealthTips();
+        });
+
+        // function to display the health tips in the div
+        async function displayHealthTips(){
+            const healthTips = await fetchHealthTips();
+            console.log(healthTips);
+            const processedHealthTips = healthTips.map(function(healthTip){
+                return `
+                    <h2>${healthTip.title}</h2>
+                    <p>${healthTip.description}</p>
+                    <p>Category: ${healthTip.category}</p>
+                    <p>Source: ${healthTip.source}</p>
+                    <p>Date: ${healthTip.date}</p>
+                    <p>Benefits: ${healthTip.benefits.join(', ')}</p>
+                    <p>Recommended Intake: ${healthTip.recommended_intake}</p>
+                    <p>Related Tips: ${healthTip.related_tips.join(', ')}</p>
+                    <p>Comments: <input type="text" id="comments"></p>
+                    <textarea id="comments" name="comments" rows="4" cols="50">
+                    <button type="submit" onclick=addedComments()>Submit</button>
+                `;
+            });
+
+            div.innerHTML = processedHealthTips.join('');
+            console.log(processedHealthTips);
+            
+      
+            
+          
+        }
+
+        function addedComments(){
+            alert("Comments added successfully");
+            // show the comments in the comments <p> tag
+            
+        }
+
+   
+            
+            
+            
+            
+        
+        // on click of the nav links, show the respective section
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(function(navLink){
+            navLink.addEventListener('click', function(){
+                const sectionId = this.getAttribute('href').slice(1);
+                const section = document.getElementById(sectionId);
+                section.scrollIntoView({behavior: 'smooth'});
+                section.style.border = '2px solid red';
+            });
+        });
+        // function to fetch the health tips data from the API and save data in the variable
+        async function fetchHealthTips(){
+            const response = await fetch('https://api.npoint.io/24168fcbd0d19208b8bb');
+            const data = await response.json();
+            // console.log(data);
+            return data;
+        }
+        fetchHealthTips();
+
+        
+
+        
+
+
+
+
+        
+    </script>
+    
+</body>
+</html>
+
+<!-- 
+
+book appoitmnet of docto by clicking on button
+also check appoitments of sceduled one -->
