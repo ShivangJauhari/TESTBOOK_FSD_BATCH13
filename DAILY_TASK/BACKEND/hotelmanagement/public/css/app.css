@@ -1,0 +1,96 @@
+@import url('style.css');
+
+body{
+    background-color: #e8f3f4;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #343a40;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    margin-left: auto;
+    flex-direction: row;
+    background-color: #ffffff8f;
+    color: crimson;
+
+ }
+
+    ol, ul {
+    list-style: none;
+    display: flex;
+ }
+
+ a {
+    margin: 10px;
+    padding: 10px;
+ }
+
+ header h1{
+    text-align: center;
+    width: 150px;
+    margin-left: 40px;
+    background-color: #73eaec8f ;
+    box-shadow: 0 0 10px #000000;
+    border-radius: 10px;
+    transform: translate3d(0, 50px, 0) perspective(100px) skew(10deg, -10deg);
+    transition: transform cubic-bezier(0.55, 0.055, 0.675, 0.19);
+ }
+
+ header form{
+    margin-left:  60px;
+    margin-right:  60px;
+ }
+
+ header form input{
+    margin: 10px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: midnightblue;
+    
+ }
+
+ header form input:focus {
+    background-color: rgba(243, 157, 111, 0.196);
+}
+
+header form div{
+   height: 200px;
+   background-color: rgba(242, 242, 158, 0.888);
+    display: flex;
+    color: rgba(25, 25, 112, 0.792);
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+ }
+
+ #searchResults{
+   display: none;
+ }
+
+ footer{
+    justify-content: center;
+    align-items: center;
+ }
+
+ main{
+    justify-content: center;
+    align-items: center;
+ }
+
+ main div{
+    margin: 10px;
+    padding: 5px;
+ }
+
+

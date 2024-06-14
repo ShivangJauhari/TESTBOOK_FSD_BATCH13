@@ -1,4 +1,5 @@
 {
     "genieai.enableConversationHistory": true,
-    "livePreview.defaultPreviewPath": "/PROJECTS/HTML_CSS_JAVASCRIPT/chessjs/index.html"
+    "livePreview.defaultPreviewPath": "/PROJECTS/HTML_CSS_JAVASCRIPT/chessjs/index.html",
+    "notebook.defaultFormatter": "GitHub.copilot"
 }
