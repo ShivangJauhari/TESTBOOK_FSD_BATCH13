@@ -69,7 +69,7 @@ exports.signUp = async (req, res) => {
         // Hash the password
         const saltRounds = 10;
         const hashedPassword = await bcrypt.hash(password, saltRounds);
-
+        conslole.log(hashedPassword, saltRounds)
         // Create a new user
         const newUser = new User({
             name,

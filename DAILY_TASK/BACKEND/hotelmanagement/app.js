@@ -4,7 +4,7 @@ const mongoose =  require('mongoose');
 
 // connect the mongoose
  
-mongoose.connect("mongodb://localhost:27017/hotlemanagement");
+mongoose.connect("mongodb://localhost:27017/hotelmanagement");
 
 const express = require('express');
 const app = express();
