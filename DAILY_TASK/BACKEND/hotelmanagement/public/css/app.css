@@ -93,4 +93,12 @@ header form div{
     padding: 5px;
  }
 
+ #login{
+   display:flex;
+ }
+
+ #logout{
+   display:none;
+ }
+
 

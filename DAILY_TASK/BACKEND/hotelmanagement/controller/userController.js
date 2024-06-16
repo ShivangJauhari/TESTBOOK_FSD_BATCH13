@@ -16,7 +16,17 @@ exports.login = async (req, res) => {
     try {
         // Fetch the login page and render it
         res.render('login.ejs');
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+};
 
+        
+
+exports.authenticateUser = async (req, res) => {
+    try {
+        
         // Extract email and password from request body
         const { email, password } = req.body;
 
@@ -56,6 +66,14 @@ exports.signUp = async (req, res) => {
     try {
         // Fetch the signup page and render it
         res.render('signup.ejs');
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+};
+
+exports.createUser = async (req, res) => {
+    try {
         // Extract user details from request body
         const { name, email, password, phoneNumber, typeOfUser } = req.body;
 
@@ -69,7 +87,7 @@ exports.signUp = async (req, res) => {
         // Hash the password
         const saltRounds = 10;
         const hashedPassword = await bcrypt.hash(password, saltRounds);
-        conslole.log(hashedPassword, saltRounds)
+        console.log(hashedPassword, saltRounds)
         // Create a new user
         const newUser = new User({
             name,
@@ -84,6 +102,16 @@ exports.signUp = async (req, res) => {
 
         // Send success response
         res.status(201).json({ message: 'User created successfully' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+};
+
+exports.dashboard = async (req, res) => {
+    try {
+        // Fetch the dashboard page and render it
+        res.render('dashboard.ejs');
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Server error' });

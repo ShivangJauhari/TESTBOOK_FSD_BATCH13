@@ -55,14 +55,27 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
       body: JSON.stringify({ email, password }),
     });
 
-    const data = await response.json();
+    // const data = await response.json();
+    // console.log(data);
+    // if (response.ok) {
+    //   alert(data.message);
+    //   console.log('redirecting to', data.redirectUrl);
+    //   window.location.href = data.redirectUrl;
+    //   // declare the const variable for the id login and logout 
+    //   const login = document.getElementById('login');
+    //   const logout = document.getElementById('logout');
+    //   // change the login to logout
+    //   login.style.display = 'none';
+    //   logout.style.display = 'flex';
 
-    if (response.ok) {
-      alert(data.message);
-      window.location.href = data.redirectUrl;
-    } else {
-      alert(data.message);
-    }
+    //   //go to the dashboard route
+    //   window.location.href = '/dashboard';
+
+
+
+    // } else {
+    //   alert(data.message);
+    // }
   } catch (error) {
     console.error(error);
     alert('An error occurred, please try again');
@@ -92,7 +105,9 @@ document.getElementById('signupForm').addEventListener('submit', async (event) =
 
     if (response.ok) {
       alert(data.message);
+      // go to the login route
       window.location.href = '/login';
+      
     } else {
       alert(data.message);
     }

@@ -48,6 +48,10 @@ function checkUserSession(req, res, next) {
 router.get('/', userController.index);
 router.get('/login', userController.login);
 router.get('/signup', userController.signUp);
+router.get('/dashboard', userController.dashboard);
+router.post('/login', userController.authenticateUser);
+router.post('/signup', userController.createUser);
+
 
 // Example of a protected route
 // router.get('/dashboard', checkUserSession, userController.dashboard);
