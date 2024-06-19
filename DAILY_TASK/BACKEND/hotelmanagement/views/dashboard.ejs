@@ -1,13 +1,33 @@
-
-
 <%- include('header') %>
 
-<main>
-    <h1>Welcome</h1>
+<!-- Display error message if it exists -->
+<% if (typeof errorMessage !== 'undefined' && errorMessage) { %>
+<div class="error-message">
+    <p><%= errorMessage %></p>
+</div>
+<% } %>
+
+<% if (userType === 'guest') { %>
+<main id="dashboard-guest">
+    <div id="dashboard-main-div">
+        <img src="<%= 'http://localhost:3000/'+user['image']" alt="<%= user['name']%>" id="profileimg">
+         <h1>Welcome <%= user.name %></h1>
+    </div>
 </main>
-
-
-
-
+<% } else if (userType === 'staff') { %>
+<main id="dashboard-staff">
+    <div id="dashboard-main-div">
+        <img src="<%= 'http://localhost:3000/'+user['image']" alt="<%= user['name']%>" id="profileimg">
+        <h1>Welcome <%= user.name %></h1>
+    </div>
+</main>
+<% } else if (userType === 'admin') { %>
+<main id="dashboard-admin">
+    <div id="dashboard-main-div">
+        <img src="<%= 'http://localhost:3000/'+users[i]['image']" alt="<%= users[i]['name']%>" id="profileimg">
+        <h1>Welcome <%= user.name %></h1>
+    </div>
+</main>
+<% } %>
 
 <%- include('footer') %>

@@ -9,3 +9,10 @@
 
 
 <%- include('footer') %>
+
+<!-- Display error message if it exists -->
+<% if (typeof errorMessage !== 'undefined' && errorMessage) { %>
+    <div class="error-message">
+        <p><%= errorMessage %></p>
+    </div>
+    <% } %>

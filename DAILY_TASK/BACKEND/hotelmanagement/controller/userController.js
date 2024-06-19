@@ -62,6 +62,22 @@ exports.authenticateUser = async (req, res) => {
     }
 };
 
+// logout function
+exports.logout = async (req, res) => {
+    try {
+        // Destroy the session
+        req.session.destroy((err) => {
+            if (err) {
+                return res.status(500).json({ message: 'Server error' });
+            }
+            res.redirect('/');
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+};
+
 exports.signUp = async (req, res) => {
     try {
         // Fetch the signup page and render it
@@ -83,17 +99,28 @@ exports.createUser = async (req, res) => {
             return res.status(400).json({ message: 'User already exists' });
         }
 
+         // Check if a file was uploaded and validate it's an image
+         let imagePath = 'path/to/default/image'; // Default image path
+         if (req.file) {
+             const validImageTypes = ['image/jpeg', 'image/png', 'image/gif'];
+             if (!validImageTypes.includes(req.file.mimetype)) {
+                 return res.status(400).json({ message: 'Invalid image type' });
+             }
+             imagePath = 'uploads/' + req.file.filename;
+         }
+
 
         // Hash the password
         const saltRounds = 10;
         const hashedPassword = await bcrypt.hash(password, saltRounds);
-        console.log(hashedPassword, saltRounds)
+        // console.log(hashedPassword, saltRounds)
         // Create a new user
         const newUser = new User({
             name,
             email,
             password: hashedPassword,
             phoneNumber,
+            image: imagePath,
             typeOfUser,
         });
 
@@ -108,10 +135,17 @@ exports.createUser = async (req, res) => {
     }
 };
 
+// export the dashboard function with saving the user data in the session storage
 exports.dashboard = async (req, res) => {
     try {
-        // Fetch the dashboard page and render it
-        res.render('dashboard.ejs');
+        // Check if user is logged in
+        if (!req.session.user) {
+            return res.redirect('/login');
+        }
+
+        // Fetch the user data from the session storage
+        const user = req.session.user;
+        res.render('dashboard.ejs', { user });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Server error' });

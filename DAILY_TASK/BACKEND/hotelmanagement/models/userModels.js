@@ -20,6 +20,11 @@ const userSchema = new mongoose.Schema({
         required: false, // Depending on whether you want to make phone number mandatory
     },
 
+    image: {
+        type: String,
+        required: false,
+    },
+
     // Booking Information
     roomsBooked: [{
         roomId: {

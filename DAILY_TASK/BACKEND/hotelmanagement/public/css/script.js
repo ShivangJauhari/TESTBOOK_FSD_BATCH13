@@ -55,27 +55,29 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
       body: JSON.stringify({ email, password }),
     });
 
-    // const data = await response.json();
-    // console.log(data);
-    // if (response.ok) {
-    //   alert(data.message);
-    //   console.log('redirecting to', data.redirectUrl);
-    //   window.location.href = data.redirectUrl;
-    //   // declare the const variable for the id login and logout 
-    //   const login = document.getElementById('login');
-    //   const logout = document.getElementById('logout');
-    //   // change the login to logout
-    //   login.style.display = 'none';
-    //   logout.style.display = 'flex';
+    const data = await response.json();
+    console.log(data);
+    if (response.ok) {
+      alert(data.message);
+      console.log('redirecting to', data.redirectUrl);
+      window.location.href = data.redirectUrl;
+      
 
-    //   //go to the dashboard route
-    //   window.location.href = '/dashboard';
+      // //get the dashboard route
+      // window.location.href = '/dashboard';
+
+      // declare the const variable for the id login and logout 
+      const login = document.getElementById('login');
+      const logout = document.getElementById('logout');
+      // change the login to logout
+      login.style.display = 'none';
+      logout.style.display = 'flex';
 
 
 
-    // } else {
-    //   alert(data.message);
-    // }
+    } else {
+      alert(data.message);
+    }
   } catch (error) {
     console.error(error);
     alert('An error occurred, please try again');
@@ -90,6 +92,7 @@ document.getElementById('signupForm').addEventListener('submit', async (event) =
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
   const phoneNumber = document.getElementById('phoneNumber').value;
+  const image = document.getElementById('image').value;
   const typeOfUser = document.getElementById('typeOfUser').value;
 
   try {
@@ -105,9 +108,9 @@ document.getElementById('signupForm').addEventListener('submit', async (event) =
 
     if (response.ok) {
       alert(data.message);
-      // go to the login route
+      // send req to get the login route
       window.location.href = '/login';
-      
+     
     } else {
       alert(data.message);
     }
