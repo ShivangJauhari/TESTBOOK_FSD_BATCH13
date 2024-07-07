@@ -1,0 +1,34 @@
+
+[
+    {
+        "id": 1,
+        "title": "Software Engineer",
+        "company": "Google",
+        "location": "Mountain View, CA",
+        "from": "2018",
+        "to": "Present",
+        "description": "Worked on various projects and technologies.",
+        "imageSrc":"company/mycompany.png"
+        
+    },
+    {
+        "id": 2,
+        "title": "Frontend Developer",
+        "company": "Facebook",
+        "location": "Menlo Park, CA",
+        "from": "2016",
+        "to": "2018",
+        "description": "Developed user interfaces for web applications.",
+        "imageSrc":"company/mycompany2.png"
+    },
+    {
+        "id": 3,
+        "title": "Web Developer",
+        "company": "Amazon",
+        "location": "Seattle, WA",
+        "from": "2014",
+        "to": "2016",
+        "description": "Built and maintained websites for the company.",
+        "imageSrc":"company/mycompany3.png"
+    }
+]

@@ -42,7 +42,7 @@ const userController = require('../controller/userController');
 
 // Public routes
 router.get('/', userController.index);
-router.get('/login', userController.login);
+// router.get('/login', userController.login);
 router.get('/signup', userController.signUp);
 router.post('/signup', upload.single('image') ,userController.createUser);
 router.post('/login', userController.authenticateUser);

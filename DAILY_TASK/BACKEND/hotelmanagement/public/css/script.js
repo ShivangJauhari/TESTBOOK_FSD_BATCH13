@@ -59,21 +59,45 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
     console.log(data);
     if (response.ok) {
       alert(data.message);
+      // store the data in session storage
+      sessionStorage.setItem('token', JSON.stringify(data.token));
+      
+
       console.log('redirecting to', data.redirectUrl);
-      window.location.href = data.redirectUrl;
+      // window.location.href = data.redirectUrl;
+      
       
 
       // //get the dashboard route
       // window.location.href = '/dashboard';
+      // toogle the login and logout tag from login to display none and logout to display flex
+      document.getElementById('login').style.display = 'none';
+      document.getElementById('logout').style.display = 'flex';
 
-      // declare the const variable for the id login and logout 
-      const login = document.getElementById('login');
-      const logout = document.getElementById('logout');
-      // change the login to logout
-      login.style.display = 'none';
-      logout.style.display = 'flex';
+      //post req to logout
+      document.getElementById('logout').addEventListener('click', async (event) => {
+        event.preventDefault();
+        try {
+          const response = await fetch('/logout', {
+            method: 'GET',
+          });
 
-
+          const data = await response.json();
+          if (response.ok) {
+            alert(data.message);
+            // redirect to the login page
+            window.location.href = '/login';
+            // toogle the login and logout tag from login to display none and logout to display flex
+            document.getElementById('login').style.display = 'flex';
+            document.getElementById('logout').style.display = 'none';
+          } else {
+            alert(data.message);
+          }
+        } catch (error) {
+          console.error(error);
+          alert('An error occurred, please try again');
+        }
+      });
 
     } else {
       alert(data.message);

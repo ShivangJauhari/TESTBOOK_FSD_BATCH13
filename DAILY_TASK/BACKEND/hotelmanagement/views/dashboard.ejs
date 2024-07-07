@@ -7,27 +7,12 @@
 </div>
 <% } %>
 
-<% if (userType === 'guest') { %>
-<main id="dashboard-guest">
+<main id="dashboard-<%= userType %>">
     <div id="dashboard-main-div">
-        <img src="<%= 'http://localhost:3000/'+user['image']" alt="<%= user['name']%>" id="profileimg">
-         <h1>Welcome <%= user.name %></h1>
-    </div>
-</main>
-<% } else if (userType === 'staff') { %>
-<main id="dashboard-staff">
-    <div id="dashboard-main-div">
-        <img src="<%= 'http://localhost:3000/'+user['image']" alt="<%= user['name']%>" id="profileimg">
+        <!-- Corrected to use user['image'] and user['name'] for consistency -->
+        <img src="<%= 'http://localhost:3000/'+user['image'] %>" alt="<%= user['name'] %>" id="profileimg">
         <h1>Welcome <%= user.name %></h1>
     </div>
 </main>
-<% } else if (userType === 'admin') { %>
-<main id="dashboard-admin">
-    <div id="dashboard-main-div">
-        <img src="<%= 'http://localhost:3000/'+users[i]['image']" alt="<%= users[i]['name']%>" id="profileimg">
-        <h1>Welcome <%= user.name %></h1>
-    </div>
-</main>
-<% } %>
 
 <%- include('footer') %>

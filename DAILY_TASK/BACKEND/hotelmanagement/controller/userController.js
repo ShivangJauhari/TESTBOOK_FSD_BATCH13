@@ -10,7 +10,7 @@ exports.index = async (req, res) => {
         console.error(error);
         res.status(500).json({ message: 'Server error' });
     }
-    };
+};
 
 exports.login = async (req, res) => {
     try {
@@ -22,11 +22,8 @@ exports.login = async (req, res) => {
     }
 };
 
-        
-
 exports.authenticateUser = async (req, res) => {
     try {
-        
         // Extract email and password from request body
         const { email, password } = req.body;
 
@@ -49,20 +46,20 @@ exports.authenticateUser = async (req, res) => {
             { expiresIn: '1h' } // Token expires in 1 hour
         );
 
+        req.session.user = { userId: user._id, email: user.email, userType: user.typeOfUser }; // Store essential user info, not the entire user object
+
         // Send success response with token
         res.status(200).json({
             message: 'Login successful',
             token,
             redirectUrl: '/dashboard', // Indicate where the client should redirect to
         });
-    
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Server error' });
     }
 };
 
-// logout function
 exports.logout = async (req, res) => {
     try {
         // Destroy the session
@@ -99,21 +96,20 @@ exports.createUser = async (req, res) => {
             return res.status(400).json({ message: 'User already exists' });
         }
 
-         // Check if a file was uploaded and validate it's an image
-         let imagePath = 'path/to/default/image'; // Default image path
-         if (req.file) {
-             const validImageTypes = ['image/jpeg', 'image/png', 'image/gif'];
-             if (!validImageTypes.includes(req.file.mimetype)) {
-                 return res.status(400).json({ message: 'Invalid image type' });
-             }
-             imagePath = 'uploads/' + req.file.filename;
-         }
-
+        // Check if a file was uploaded and validate it's an image
+        let imagePath = 'path/to/default/image'; // Default image path
+        if (req.file) {
+            const validImageTypes = ['image/jpeg', 'image/png', 'image/gif'];
+            if (!validImageTypes.includes(req.file.mimetype)) {
+                return res.status(400).json({ message: 'Invalid image type' });
+            }
+            imagePath = 'uploads/' + req.file.filename;
+        }
 
         // Hash the password
         const saltRounds = 10;
         const hashedPassword = await bcrypt.hash(password, saltRounds);
-        // console.log(hashedPassword, saltRounds)
+
         // Create a new user
         const newUser = new User({
             name,
@@ -135,7 +131,6 @@ exports.createUser = async (req, res) => {
     }
 };
 
-// export the dashboard function with saving the user data in the session storage
 exports.dashboard = async (req, res) => {
     try {
         // Check if user is logged in
@@ -145,7 +140,17 @@ exports.dashboard = async (req, res) => {
 
         // Fetch the user data from the session storage
         const user = req.session.user;
-        res.render('dashboard.ejs', { user });
+
+        // Determine the userType. This is just an example, adjust according to your application logic
+        let userType = 'guest'; // Default to 'guest'
+        if (user.isAdmin) {
+            userType = 'admin';
+        } else if (user.isStaff) {
+            userType = 'staff';
+        }
+
+        // Pass the userType along with the user data to the template
+        res.render('dashboard.ejs', { user, userType });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Server error' });
